@@ -24,5 +24,17 @@
     display: flex;
     position: absolute;
     top: 15px;
-    right: 10px
+    right: 10px;
+}
+
+.loggedUser {
+    padding-right: 50px;
+    font-size: 1.25rem;
+    position: relative;
+    top: 7px
+}
+
+.userDiv {
+    display: flex;
+    justify-content: space-between;
 }

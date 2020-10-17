@@ -52,11 +52,11 @@ class SignInEmail extends React.Component {
                 })
                 .catch((error) => {
                     if(error.code === "auth/user-not-found") {
-                        alert("Podany użytkownik nie istnieje. Aby się zalogować, najpierw zarejestruj się.")
+                        alert("This user doesn't exist. If you want to log in - please sign up first.")
                     } else if (error.code === "auth/wrong-password") {
-                        alert("Podano błędne hasło.")
+                        alert("This password is wrong.")
                     } else if (error.code === "auth/invalid-email") {
-                        alert("Podano błędny adres e-mail.")
+                        alert("This email address is wrong.")
                     } else {
                         alert(error.message)
                     }
@@ -75,8 +75,8 @@ class SignInEmail extends React.Component {
                 <h1 className={styles.loginHeader}>
                     {
                         this.props.isSignUp
-                        ? "Zarejestruj się"
-                        : "Zaloguj się"
+                        ? "Sign Up"
+                        : "Sign In"
                     }
                 </h1>
                     <form noValidate onSubmit={this.handleOnSubmit}>
@@ -86,7 +86,7 @@ class SignInEmail extends React.Component {
                             required
                             fullWidth
                             id="email"
-                            label="Adres email"
+                            label="Email Address"
                             name="email"
                             autoComplete="email"
                             autoFocus
@@ -99,7 +99,7 @@ class SignInEmail extends React.Component {
                             required
                             fullWidth
                             name="password"
-                            label="Hasło"
+                            label="Password"
                             type="password"
                             id="password"
                             autoComplete="current-password"
@@ -112,15 +112,15 @@ class SignInEmail extends React.Component {
                             variant="contained"
                             color="primary"
                         >
-                            {this.props.isSignUp ? "Zarejestruj się" : "Zaloguj się"}
+                            {this.props.isSignUp ? "Sign Up" : "Sign In"}
                             
                         </Button>
                         <Grid container>
                                 <Link href="#" variant="body2">
                                     {
                                         this.props.isSignUp
-                                        ? <Link to='/signin'>Masz już konto? Zaloguj się </Link>
-                                        : <Link to='/signup'>Nie masz jeszcze konta? Zarejestruj się </Link>
+                                        ? <Link to='/signin'>Already have an account? Sign In! </Link>
+                                        : <Link to='/signup'>Don't have an account yet? Sign Up! </Link>
                                     }
                                 </Link>
                         

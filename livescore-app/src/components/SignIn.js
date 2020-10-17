@@ -1,7 +1,7 @@
 import React from 'react';
 import SignInEmail from './SignInEmail'
-import SignInGoogle from './SignInGoogle';
-// import SignInFacebook from './SignInFacebook';
+import SignInGoogleFacebook from './SignInGoogleFacebook';
+
 
 class SignIn extends React.Component {
     render() {
@@ -9,9 +9,7 @@ class SignIn extends React.Component {
             <div>
                 <SignInEmail />
                 <hr />
-                <SignInGoogle />
-                {/* <hr />
-                <SignInFacebook /> */}
+                <SignInGoogleFacebook />
             </div>
         )
     }

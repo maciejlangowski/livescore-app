@@ -21,15 +21,6 @@ class Navigation extends React.Component {
         return(
             <AppBar position='static'>
                 <Toolbar>
-                    {/* <div className="appbar">
-                        <Button color="inherit" component={NavLink} to='/'>Home</Button>
-                        <Button color="inherit" component={NavLink} to='/livescores'>Livescores</Button>
-                        <Button color="inherit" component={NavLink} to='/scores'>Scores</Button>
-                        <Button color="inherit" component={NavLink} to='/teams'>Teams</Button>
-                        {
-                           this.state.user && <Button color="inherit" component={NavLink} to='/myteams'>My Teams</Button>
-                        }
-                    </div> */}
                     <div className={styles.toolbar}>
                         <IconButton edge="start" color="inherit" aria-label="menu">
                             <MenuIcon />
