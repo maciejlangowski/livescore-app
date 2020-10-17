@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/livescore-app/static/css/main.6ea5d808.chunk.css",
+    "main.js": "/livescore-app/static/js/main.e51d8b8b.chunk.js",
+    "main.js.map": "/livescore-app/static/js/main.e51d8b8b.chunk.js.map",
+    "runtime-main.js": "/livescore-app/static/js/runtime-main.7afc499d.js",
+    "runtime-main.js.map": "/livescore-app/static/js/runtime-main.7afc499d.js.map",
+    "static/js/2.5e6e83a9.chunk.js": "/livescore-app/static/js/2.5e6e83a9.chunk.js",
+    "static/js/2.5e6e83a9.chunk.js.map": "/livescore-app/static/js/2.5e6e83a9.chunk.js.map",
+    "index.html": "/livescore-app/index.html",
+    "precache-manifest.1f5075ee91afe24e40e69aab32bf4a51.js": "/livescore-app/precache-manifest.1f5075ee91afe24e40e69aab32bf4a51.js",
+    "service-worker.js": "/livescore-app/service-worker.js",
+    "static/css/main.6ea5d808.chunk.css.map": "/livescore-app/static/css/main.6ea5d808.chunk.css.map",
+    "static/js/2.5e6e83a9.chunk.js.LICENSE.txt": "/livescore-app/static/js/2.5e6e83a9.chunk.js.LICENSE.txt",
+    "static/media/logos.png": "/livescore-app/static/media/logos.ee690d85.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7afc499d.js",
+    "static/js/2.5e6e83a9.chunk.js",
+    "static/css/main.6ea5d808.chunk.css",
+    "static/js/main.e51d8b8b.chunk.js"
+  ]
+}
