@@ -33,7 +33,7 @@ class SignInButton extends React.Component {
             <div className={styles.userDiv}>
                 <div className={styles.loggedUser}>
                     {
-                        this.state.user &&`Hello, ${firebase.auth().currentUser.displayName}.`
+                        this.state.user &&`Hello, ${firebase.auth().currentUser.displayName}`
                     }
                 </div>
                 
