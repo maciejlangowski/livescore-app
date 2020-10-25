@@ -102,9 +102,9 @@ export default function MainSection() {
   }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter className={styles.main}>
       <Hidden xlUp>
-        <Button>IKONA</Button>
+        <Button></Button>
 
       </Hidden>
       <div className={classes.root}>

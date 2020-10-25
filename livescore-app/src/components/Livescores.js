@@ -3,8 +3,10 @@ import React from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import HeartIcon from './HeartIcon';
+import Paper from '@material-ui/core/Paper';
+import styles from './styles.module.css'
 
 class Livescores extends React.Component {
     state = {
@@ -34,60 +36,254 @@ class Livescores extends React.Component {
                 this.setState({
                     games: gameData
                 })
-                console.log(this.state.games)
-
         })
     }
 
     componentDidMount() {
         this.fetchData();
+
+        // setInterval(() =>{
+        //     this.fetchData()
+        //     console.log('updated')
+        // }, 15000)
     }
 
     render() {
         return (
-            <div>
-                <h1>Livescores</h1>
-                <Table>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell>Heart 1</TableCell>
-                            <TableCell>Logo 1</TableCell>
-                            <TableCell>Team 1</TableCell>
-                            <TableCell>Score</TableCell>
-                            <TableCell>Team 2</TableCell>
-                            <TableCell>Logo 2</TableCell>
-                            <TableCell>Heart 2</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                    <TableRow>
-                            <TableCell>
-                                {
-                                    this.state.games.map(game => {
-                                        return(
-                                            <div>{game.homeTeam.team_name}</div>
-                                        )
-                                    })
-                                }
-                            </TableCell>
-                            <TableCell>
-                                {
-                                    this.state.games.map(game => {
-                                        return(
-                                            <img src = {game.homeTeam.logo} />
-                                        )
-                                    })
-                                }
-                            </TableCell>
-                            <TableCell>Team 1</TableCell>
-                            <TableCell>Score</TableCell>
-                            <TableCell>Team 2</TableCell>
-                            <TableCell>Logo 2</TableCell>
-                            <TableCell>Heart 2</TableCell>
-                        </TableRow>
+            <div className = {styles.livescoreTable}>
+                <div className = {styles.headerDiv}>
+                    <h1>Livescores </h1>
+                </div>
+                <Paper elevation={10}>
+                    <Table>
+                        <TableBody>
+                            <TableRow className = {styles.leagueName}>Premier League 󠁧󠁢󠁥󠁮󠁧🏴󠁧󠁢󠁥󠁮󠁧󠁿</TableRow>
+                            {
+                                this.state.games.map(game => game.league.name === "Premier League" && game.league.country === "England"
+                                    ? <TableRow>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.homeTeam.team_name}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.homeTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.homeTeam.logo} alt = "" className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.score}>
+                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                    {game.elapsed}'
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.awayTeam.logo} className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.awayTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.awayTeam.team_name}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                        : ''
+                                    
+                                )
+                            }       
                         
-                    </TableBody>
-                </Table>
+                            <TableRow className = {styles.leagueName}>League 1 🇫🇷</TableRow>
+                            {
+                                this.state.games.map(game => game.league.name === "Ligue 1" && game.league.country === "France"
+                                    ? <TableRow>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.homeTeam.team_name}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.homeTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.homeTeam.logo} alt = "" className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.score}>
+                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                    {game.elapsed}'
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.awayTeam.logo} className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.awayTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.awayTeam.team_name}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                        : ''
+                                    
+                                )
+                            }                 
+                            <TableRow className = {styles.leagueName}>La Liga 🇪🇸</TableRow>
+                            {
+                                this.state.games.map(game => game.league.name === "Primera Division" && game.league.country === "Spain"
+                                    ? <TableRow>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.homeTeam.team_name}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.homeTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.homeTeam.logo} alt = "" className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.score}>
+                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                    {game.elapsed}'
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.awayTeam.logo} className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.awayTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.awayTeam.team_name}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                        : ''
+                                    
+                                )
+                            }                 
+                            <TableRow className = {styles.leagueName}>Bundesliga 🇩🇪</TableRow>
+                            {
+                                this.state.games.map(game => game.league.name === "Bundesliga" && game.league.country === "Germany"
+                                    ? <TableRow>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.homeTeam.team_name}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.homeTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.homeTeam.logo} alt = "" className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.score}>
+                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                    {game.elapsed}'
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.awayTeam.logo} className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.awayTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.awayTeam.team_name}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                        : ''
+                                )
+                            }                
+                            <TableRow className = {styles.leagueName}>Ekstraklasa 🇵🇱</TableRow>
+                            {
+                                this.state.games.map(game => game.league.name === "Ekstraklasa" && game.league.country === "Poland"
+                                    ? <TableRow>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.homeTeam.team_name}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.homeTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.homeTeam.logo} alt = "" className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.score}>
+                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                    {game.elapsed}'
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.awayTeam.logo} className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.awayTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.awayTeam.team_name}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                        : ''
+                                    
+                                )
+                            }                 
+                            <TableRow className = {styles.leagueName}>Serie A 🇮🇹</TableRow>
+                            {
+                                this.state.games.map(game => game.league.name === "Serie A" && game.league.country === "Italy"
+                                    ? <TableRow>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.homeTeam.team_name}
+                                                />
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.homeTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.homeTeam.logo} alt = "" className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.score}>
+                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                    {game.elapsed}'
+                                                </div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <img src = {game.awayTeam.logo} className = {styles.teamLogo}/>
+                                            </TableCell>
+                                            <TableCell>
+                                                <div className={styles.teamName}>{game.awayTeam.team_name}</div>
+                                            </TableCell>
+                                            <TableCell>
+                                                <HeartIcon 
+                                                    team = {game.awayTeam.team_name}
+                                                />
+                                            </TableCell>
+                                        </TableRow>
+                                        : ''
+                                    
+                                )
+                            }                 
+                        </TableBody>
+                    </Table>
+                </Paper>
+                
+                        
             </div>
             
         )

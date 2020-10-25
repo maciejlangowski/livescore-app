@@ -1,3 +1,23 @@
+:root{
+    background-image: url('https://images.unsplash.com/photo-1544914379-806667cd9489?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
+    width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.6rem;
+    margin: 2rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.headerDiv {
+    background-color: white;
+    width: 50%;
+    opacity: 0.75;
+    margin: 1rem auto;
+}
+
 .toolbar {
     display: flex;
     justify-content: space-between;
@@ -37,4 +57,38 @@
 .userDiv {
     display: flex;
     justify-content: space-between;
+}
+
+.teamLogo {
+    width: 35px;
+    height: 35px
+}
+
+.livescoreTable {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.teamName {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.leagueName {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.heart {
+    cursor: pointer;
 }
