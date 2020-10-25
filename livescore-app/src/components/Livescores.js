@@ -42,10 +42,10 @@ class Livescores extends React.Component {
     componentDidMount() {
         this.fetchData();
 
-        // setInterval(() =>{
-        //     this.fetchData()
-        //     console.log('updated')
-        // }, 15000)
+        setInterval(() =>{
+            this.fetchData()
+            console.log('updated')
+        }, 15000)
     }
 
     render() {
