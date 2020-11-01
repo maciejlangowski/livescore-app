@@ -17,7 +17,7 @@ import styles from './styles.module.css';
 import Welcome from './Welcome';
 import Livescores from './Livescores';
 import Scores from './Scores';
-import Teams from './Teams';
+import Standings from './Standings';
 import MyTeams from './MyTeams';
 import SignIn from './SignIn';
 import SignInButton from './SignInButton'
@@ -166,8 +166,8 @@ export default function MainSection() {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/livescores" component={Livescores} />
             <Route exact path="/scores" component={Scores} />
-            <Route exact path="/teams" component={Teams} />
             <Route exact path="/myteams" component={MyTeams} />
+            <Route exact path="/standings" component={Standings} />
             
             <Route path='/signin'  component={SignIn}/>
             <Route path='/signup' component={() => <SignInEmail isSignUp />} /> 

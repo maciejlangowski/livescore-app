@@ -1,7 +1,9 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import firebase from 'firebase';
+import Paper from '@material-ui/core/Paper';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import styles from './styles.module.css';
 
 class SignInGoogle extends React.Component {
     state = {
@@ -31,12 +33,14 @@ class SignInGoogle extends React.Component {
             <div>
                 {
                     this.state.isSignedIn 
-                    ? <Redirect to="/" /> 
+                    ? <Redirect to="/livescores" /> 
                     : (
-                        <StyledFirebaseAuth
-                            uiConfig={this.uiConfig}
-                            firebaseAuth={firebase.auth()}
-                        />
+                        <Paper className={styles.paperSignIn}>
+                            <StyledFirebaseAuth
+                                uiConfig={this.uiConfig}
+                                firebaseAuth={firebase.auth()}
+                            />
+                        </Paper>
                         
                     )
                 }

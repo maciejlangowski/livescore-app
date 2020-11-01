@@ -6,7 +6,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import AlarmIcon from '@material-ui/icons/Alarm';
-import FlagIcon from '@material-ui/icons/Flag';
+import ListAltIcon from '@material-ui/icons/ListAlt';
 
 const entries = [
     {
@@ -25,10 +25,11 @@ const entries = [
         url: "/scores"
     },
     {
-        name: 'Teams',
-        icon: FlagIcon,
-        url: "/teams"
+        name: 'Standings',
+        icon: ListAltIcon,
+        url: "/standings"
     },
+
     {
         name: 'My Teams',
         icon: FavoriteBorderOutlinedIcon,

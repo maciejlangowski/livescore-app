@@ -20,7 +20,8 @@ class HeartIcon extends React.Component {
             let databaseRef = firebase.database().ref(currentUser.uid).push();
       
                 databaseRef.set({
-                  'team': this.props.team
+                  'team': this.props.team,
+                  'logo': this.props.logo
                 }) 
             
             this.setState({
@@ -47,12 +48,10 @@ class HeartIcon extends React.Component {
     render() {
         return (
             <IconButton aria-label="add to favorites" className={styles.favIcon}>
-            {/* <AuthIcons> */}
               <FavoriteIcon
                 style={{ color: this.favColor() }}
                 onClick={this.onClickHandler}
               />
-            {/* </AuthIcons> */}
           </IconButton>
         )
     }

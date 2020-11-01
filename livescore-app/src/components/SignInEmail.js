@@ -4,9 +4,9 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
 import firebase from 'firebase';
 import styles from './styles.module.css';
-
 
 class SignInEmail extends React.Component {
     state = {
@@ -67,66 +67,72 @@ class SignInEmail extends React.Component {
     
     render() {
         if(this.state.redirect) {
-            return <Redirect to="/" />
+            return <Redirect to="/livescores" />
         }
 
         return (
-            <Container component="main" maxWidth="xs">
-                <h1 className={styles.loginHeader}>
-                    {
-                        this.props.isSignUp
-                        ? "Sign Up"
-                        : "Sign In"
-                    }
-                </h1>
-                    <form noValidate onSubmit={this.handleOnSubmit}>
-                        <TextField
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="email"
-                            label="Email Address"
-                            name="email"
-                            autoComplete="email"
-                            autoFocus
-                            onChange={this.handleOnChange}
-                            value={this.state.email}
-                        />
-                        <TextField
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            name="password"
-                            label="Password"
-                            type="password"
-                            id="password"
-                            autoComplete="current-password"
-                            onChange={this.handleOnChange}
-                            value={this.state.password}
-                        />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                        >
-                            {this.props.isSignUp ? "Sign Up" : "Sign In"}
+            <div className={styles.divSignIn}>
+                <Paper>
+                    <Container className={styles.containerSignIn} component="main" maxWidth="xs">
+                    <h1 className={styles.loginHeader}>
+                        {
+                            this.props.isSignUp
+                            ? "Sign Up"
+                            : "Sign In"
+                        }
+                    </h1>
+                        <form noValidate onSubmit={this.handleOnSubmit}>
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="email"
+                                label="Email Address"
+                                name="email"
+                                autoComplete="email"
+                                autoFocus
+                                onChange={this.handleOnChange}
+                                value={this.state.email}
+                            />
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="password"
+                                label="Password"
+                                type="password"
+                                id="password"
+                                autoComplete="current-password"
+                                onChange={this.handleOnChange}
+                                value={this.state.password}
+                            />
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                            >
+                                {this.props.isSignUp ? "Sign Up" : "Sign In"}
+                                
+                            </Button>
+                            <Grid container>
+                                    <Link href="#" variant="body2">
+                                        {
+                                            this.props.isSignUp
+                                            ? <Link to='/signin'>Already have an account? Sign In! </Link>
+                                            : <Link to='/signup'>Don't have an account yet? Sign Up! </Link>
+                                        }
+                                    </Link>
                             
-                        </Button>
-                        <Grid container>
-                                <Link href="#" variant="body2">
-                                    {
-                                        this.props.isSignUp
-                                        ? <Link to='/signin'>Already have an account? Sign In! </Link>
-                                        : <Link to='/signup'>Don't have an account yet? Sign Up! </Link>
-                                    }
-                                </Link>
-                        
-                        </Grid>
-                    </form>
-                </Container>
+                            </Grid>
+                        </form>
+                    </Container>
+                </Paper>
+            </div>
+            
+            
             
         )
     }

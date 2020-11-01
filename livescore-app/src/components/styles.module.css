@@ -5,7 +5,7 @@
 
 h1 {
     font-size: 2.5rem;
-    letter-spacing: 0.6rem;
+    letter-spacing: 0.3rem;
     margin: 2rem;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -14,7 +14,7 @@ h1 {
 .headerDiv {
     background-color: white;
     width: 50%;
-    opacity: 0.75;
+    opacity: 0.85;
     margin: 1rem auto;
 }
 
@@ -77,18 +77,60 @@ h1 {
     font-size: 1.2rem;
 }
 
-.teamName {
+.teamName{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     font-size: 1.2rem;
 }
 
+
 .leagueName {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
     font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .heart {
     cursor: pointer;
+}
+
+.paper {
+    width: 60%;
+    padding: 1rem 2rem;
+    margin: 0.5rem 0;
+    opacity: 0.85
+}
+
+.divSignIn {
+    opacity: 0.95;
+}
+
+.containerSignIn {
+    padding: 1rem 0 3rem 0;
+    margin: 1rem;
+
+} 
+
+.signInContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.paperSignIn {
+    margin: 0.5rem;
+    padding: 1rem 6rem ;
+    opacity: 0.9;
+}
+
+.teamCard {
+    margin: 1rem
+}
+
+.favouriteTeamList {
+    display: grid;
+    grid-template-columns:  repeat(6, 1fr);
+    padding: 0 1rem
 }

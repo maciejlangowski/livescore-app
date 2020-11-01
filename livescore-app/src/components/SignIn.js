@@ -1,14 +1,14 @@
 import React from 'react';
 import SignInEmail from './SignInEmail'
 import SignInGoogleFacebook from './SignInGoogleFacebook';
+import styles from './styles.module.css';
 
 
 class SignIn extends React.Component {
     render() {
         return (
-            <div>
+            <div className={styles.signInContainer}> 
                 <SignInEmail />
-                <hr />
                 <SignInGoogleFacebook />
             </div>
         )

@@ -5,13 +5,13 @@ import MainSection from './components/MainSection'
 const theme = createMuiTheme({
   palette: {
       primary: {
-          light: "#33FF8A",
-          main: "#5A7F10",
+          light: "#CBB67C",
+          main: "#586D3D",
           dark: "#33FF8A",
   },
       secondary: {
           light: "#c4e34a",
-          main: "#68a845",
+          main: "#CBB67C",
           dark: "#23763e",
   }
   },
