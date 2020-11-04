@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/livescore-app/static/css/main.57733c60.chunk.css",
-    "main.js": "/livescore-app/static/js/main.6889c6d9.chunk.js",
-    "main.js.map": "/livescore-app/static/js/main.6889c6d9.chunk.js.map",
+    "main.css": "/livescore-app/static/css/main.df3b8527.chunk.css",
+    "main.js": "/livescore-app/static/js/main.3a945a38.chunk.js",
+    "main.js.map": "/livescore-app/static/js/main.3a945a38.chunk.js.map",
     "runtime-main.js": "/livescore-app/static/js/runtime-main.7afc499d.js",
     "runtime-main.js.map": "/livescore-app/static/js/runtime-main.7afc499d.js.map",
-    "static/js/2.1c592abf.chunk.js": "/livescore-app/static/js/2.1c592abf.chunk.js",
-    "static/js/2.1c592abf.chunk.js.map": "/livescore-app/static/js/2.1c592abf.chunk.js.map",
+    "static/js/2.341c015d.chunk.js": "/livescore-app/static/js/2.341c015d.chunk.js",
+    "static/js/2.341c015d.chunk.js.map": "/livescore-app/static/js/2.341c015d.chunk.js.map",
     "index.html": "/livescore-app/index.html",
-    "precache-manifest.1fbf40087eaf08b2e9cfff8b1a46d4cf.js": "/livescore-app/precache-manifest.1fbf40087eaf08b2e9cfff8b1a46d4cf.js",
+    "precache-manifest.81d6048232aaab4d3dab9dbebbea10f7.js": "/livescore-app/precache-manifest.81d6048232aaab4d3dab9dbebbea10f7.js",
     "service-worker.js": "/livescore-app/service-worker.js",
-    "static/css/main.57733c60.chunk.css.map": "/livescore-app/static/css/main.57733c60.chunk.css.map",
-    "static/js/2.1c592abf.chunk.js.LICENSE.txt": "/livescore-app/static/js/2.1c592abf.chunk.js.LICENSE.txt",
+    "static/css/main.df3b8527.chunk.css.map": "/livescore-app/static/css/main.df3b8527.chunk.css.map",
+    "static/js/2.341c015d.chunk.js.LICENSE.txt": "/livescore-app/static/js/2.341c015d.chunk.js.LICENSE.txt",
     "static/media/logos.png": "/livescore-app/static/media/logos.ee690d85.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7afc499d.js",
-    "static/js/2.1c592abf.chunk.js",
-    "static/css/main.57733c60.chunk.css",
-    "static/js/main.6889c6d9.chunk.js"
+    "static/js/2.341c015d.chunk.js",
+    "static/css/main.df3b8527.chunk.css",
+    "static/js/main.3a945a38.chunk.js"
   ]
 }
