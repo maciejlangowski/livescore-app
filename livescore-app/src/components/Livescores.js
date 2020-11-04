@@ -54,22 +54,21 @@ class Livescores extends React.Component {
     }
 
     leagues = [
-        {name:'Premier League', country:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', id: ''},
-        {name:'Ligue 1', country:'France', flag:'🇫🇷', id:'' },
-        {name:'Primera Division', country:'Spain', flag:'🇪🇸', id: ''},
-        {name:'Bundesliga', country:'Germany', flag:'🇩🇪', id: ''},
-        {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱', id: ''},
-        {name:'Serie A', country:'Italy', flag:'🇮🇹', id: ''},
-        {name:'UEFA Champions League', country:'', flag:'🇪🇺', id: ''},
-        {name:'UEFA Europa League', country:'', flag:'🇪🇺', id: ''},
-        {name:'PFL - Center', country:'Russia', flag:'🇪🇺', id: ''},
+        {name:'Premier League', country:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
+        {name:'Ligue 1', country:'France', flag:'🇫🇷'},
+        {name:'Primera Division', country:'Spain', flag:'🇪🇸'},
+        {name:'Bundesliga', country:'Germany', flag:'🇩🇪'},
+        {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱'},
+        {name:'Serie A', country:'Italy', flag:'🇮🇹'},
+        {name:'UEFA Champions League', country:'World', flag:'🇪🇺'},
+        {name:'UEFA Europa League', country:'World', flag:'🇪🇺'},
     ]
 
     render() {
         return (
             <div className = {styles.livescoreTable}>
                 <div className = {styles.headerDiv}>
-                    <h1>⚽️ Livescores ️⚽️</h1>
+                    <h1>Livescores ️⚽️</h1>
                 </div>
                 {
                     this.state.isLoading
