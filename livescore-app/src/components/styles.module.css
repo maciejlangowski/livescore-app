@@ -4,7 +4,7 @@
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 0.3rem;
     margin: 2rem;
     text-align: center;
@@ -60,8 +60,8 @@ h1 {
 }
 
 .teamLogo {
-    width: 35px;
-    height: 35px
+    width: 30px;
+    height: 30px
 }
 
 .livescoreTable {
@@ -74,25 +74,28 @@ h1 {
 .score {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 700 ;
 }
 
-.teamName{
+.hometeamName{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    font-size: 1.2rem;
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.awayteamName{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-size: 0.9rem;
 }
 
 
 .leagueName {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
-}
-
-.heart {
-    cursor: pointer;
 }
 
 .paper {
@@ -133,4 +136,9 @@ h1 {
     display: grid;
     grid-template-columns:  repeat(6, 1fr);
     padding: 0 1rem
+}
+
+.heart , .homeLogo, .homeName {
+    display: flex;
+    justify-content: flex-end;
 }
