@@ -1,6 +1,5 @@
 import React from 'react';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-// import AuthIcons from './AuthIcons';
 import IconButton from '@material-ui/core/IconButton';
 import { red, grey } from '@material-ui/core/colors';
 import styles from './styles.module.css'
@@ -51,6 +50,7 @@ class HeartIcon extends React.Component {
               <FavoriteIcon
                 style={{ color: this.favColor() }}
                 onClick={this.onClickHandler}
+                fontSize='small'
               />
           </IconButton>
         )

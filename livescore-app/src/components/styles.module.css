@@ -1,3 +1,5 @@
+
+/* Całość projektu */
 :root{
     background-image: url('https://images.unsplash.com/photo-1544914379-806667cd9489?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
     width: 100%;
@@ -6,24 +8,12 @@
 h1 {
     font-size: 2rem;
     letter-spacing: 0.3rem;
-    margin: 2rem;
+    margin: 1rem;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.headerDiv {
-    background-color: white;
-    width: 50%;
-    opacity: 0.85;
-    margin: 1rem auto;
-}
-
-.toolbar {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
+/* Toolbar i sidebar */
 .navLink {
     text-decoration: none;
     text-transform: uppercase;
@@ -46,7 +36,6 @@ h1 {
     top: 15px;
     right: 10px;
 }
-
 .loggedUser {
     padding-right: 50px;
     font-size: 1.25rem;
@@ -59,11 +48,7 @@ h1 {
     justify-content: space-between;
 }
 
-.teamLogo {
-    width: 30px;
-    height: 30px
-}
-
+/*Livescore*/
 .livescoreTable {
     margin-bottom: 4rem;
     display: flex;
@@ -71,25 +56,26 @@ h1 {
     align-items: center;
 }
 
-.score {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 700 ;
+.headerDiv {
+    background-color: white;
+    border-radius: 0.25rem;
+    width: 25%;
+    opacity: 0.85;
+    margin: 1rem auto;
 }
 
-.hometeamName{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: right;
-    font-size: 0.9rem;
+.paper {
+    width: 50%;
+    padding: 1rem 0.5rem 1rem 1.5rem;
+    margin: 0.5rem 0;
+    opacity: 0.85
 }
 
-.awayteamName{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: left;
-    font-size: 0.9rem;
+.tableTop {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
 }
-
 
 .leagueName {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -98,12 +84,93 @@ h1 {
     font-weight: 700;
 }
 
-.paper {
-    width: 60%;
-    padding: 1rem 2rem;
-    margin: 0.5rem 0;
+.gameRow {
+    padding: 0.25rem 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 2fr 1fr 4fr 1fr;
+}
+
+.hometeamName{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.95rem;
+}
+
+.teamLogo {
+    width: 30px;
+    height: 30px
+}
+
+.homeLogo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 700 ;
+}
+
+.awayLogo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.awayteamName{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.95rem;
+}
+
+/*MyTeams */
+
+.teamCard {
+    margin: 1rem
+}
+
+.favouriteTeamList {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 0 1rem
+} 
+
+/*Standings */
+
+.paperStandings {
+    width: 50%;
+    padding: 1rem;
     opacity: 0.85
 }
+
+.standingsLeagueName {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.standingsTableTop {
+    margin-bottom: 1rem;
+}
+
+.standingsCell{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/*Sign In */
 
 .divSignIn {
     opacity: 0.95;
@@ -112,7 +179,6 @@ h1 {
 .containerSignIn {
     padding: 1rem 0 3rem 0;
     margin: 1rem;
-
 } 
 
 .signInContainer {
@@ -128,17 +194,37 @@ h1 {
     opacity: 0.9;
 }
 
-.teamCard {
-    margin: 1rem
-}
 
-.favouriteTeamList {
-    display: grid;
-    grid-template-columns:  repeat(6, 1fr);
-    padding: 0 1rem
-}
 
-.heart , .homeLogo, .homeName {
-    display: flex;
-    justify-content: flex-end;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

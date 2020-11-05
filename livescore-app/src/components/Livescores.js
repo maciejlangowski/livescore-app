@@ -1,16 +1,13 @@
 import React from 'react';
 
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
-import HeartIcon from './HeartIcon';
 import Paper from '@material-ui/core/Paper';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from './styles.module.css';
 
+import HeartIcon from './HeartIcon'
 import AuthIcons from './AuthIcons';
 import PageWrapper from './Pagewrapper';
+import StandingsIcon from './StandingsIcon';
 
 class Livescores extends React.Component {
     state = {
@@ -54,85 +51,71 @@ class Livescores extends React.Component {
     }
 
     leagues = [
-        {name:'Premier League', country:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},
-        {name:'Ligue 1', country:'France', flag:'🇫🇷'},
+        {name:'Premier League', country:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', id: 524},
+        {name:'Ligue 1', country:'France', flag:'🇫🇷', id: 555},
         {name:'Primera Division', country:'Spain', flag:'🇪🇸'},
         {name:'Bundesliga', country:'Germany', flag:'🇩🇪'},
         {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱'},
         {name:'Serie A', country:'Italy', flag:'🇮🇹'},
         {name:'UEFA Champions League', country:'World', flag:'🇪🇺'},
         {name:'UEFA Europa League', country:'World', flag:'🇪🇺'},
+        {name:'Cup', country:'Turkey', flag:'🇪🇺'},
+        {name:'Youth Championship', country:'Russia', flag:'🇪🇺'},
     ]
 
     render() {
         return (
             <div className = {styles.livescoreTable}>
                 <div className = {styles.headerDiv}>
-                    <h1>Livescores ️⚽️</h1>
+                    <h1>LIVESCORES</h1>
                 </div>
                 {
                     this.state.isLoading
                     ? <PageWrapper><CircularProgress size='350px' /> </PageWrapper>
                     : <Paper elevation={10} className={styles.paper}>
-                        <Table padding='checkbox'>
                             {
                                 this.leagues.map((league) => {
                                     return(
-                                        <TableBody>
-                                            <TableRow>
-                                                <TableCell><div className = {styles.leagueName}>{league.name}</div></TableCell>
-                                                <TableCell><div className = {styles.leagueName}>{league.flag}</div></TableCell>
-                                            </TableRow>
-                                            {
-                                                this.state.games.map(game => game.league.name === league.name && game.league.country === league.country
-                                                ? <TableRow>
-                                                        <TableCell>
-                                                            <AuthIcons>
-                                                                <div className={styles.heart}>
-                                                                    <HeartIcon 
-                                                                        team = {game.homeTeam.team_name}
-                                                                        logo = {game.homeTeam.logo}
-                                                                    />
-                                                                </div>
-                                                            </AuthIcons>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <div className={styles.hometeamName}>{game.homeTeam.team_name}</div>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <div className = {styles.homeLogo}>
-                                                                <img src = {game.homeTeam.logo} alt = {game.homeTeam.team_name} className = {styles.teamLogo}/>
-                                                            </div>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <div className={styles.score}>
-                                                                {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
-                                                                {game.elapsed}'
-                                                            </div>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <img src = {game.awayTeam.logo} alt = {game.awayTeam.team_name} className = {styles.teamLogo}/>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <div className={styles.awayteamName}>{game.awayTeam.team_name}</div>
-                                                        </TableCell>
-                                                        <TableCell>
-                                                            <AuthIcons>
-                                                                <HeartIcon 
-                                                                    team = {game.awayTeam.team_name}
-                                                                    logo = {game.awayTeam.logo}
-                                                                />
-                                                            </AuthIcons>
-                                                        </TableCell>
-                                                    </TableRow>
-                                                : ''
-                                                )
-                                            }
-                                        </TableBody>
+                                        <div>
+                                            <div className = {styles.tableTop}>
+                                                <div className = {styles.leagueName}>{league.flag} {league.name}</div>
+                                                <StandingsIcon leagueId = {league.id}/>
+                                            </div>
+                                        {
+                                            this.state.games.map(game => game.league.name === league.name && game.league.country === league.country
+                                            ? <div className = {styles.gameRow}>
+                                                <AuthIcons>
+                                                        <HeartIcon 
+                                                            team = {game.homeTeam.team_name}
+                                                            logo = {game.homeTeam.logo}
+                                                        />
+                                                </AuthIcons>
+                                                <div className={styles.hometeamName}>{game.homeTeam.team_name}</div>
+                                                <div className = {styles.homeLogo}>
+                                                    <img src = {game.homeTeam.logo} alt = {game.homeTeam.team_name} className = {styles.teamLogo}/>
+                                                </div>
+                                                <div className={styles.score}>
+                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                     {game.elapsed}'
+                                                </div>
+                                                <div className = {styles.awayLogo}>
+                                                    <img src = {game.awayTeam.logo} alt = {game.awayTeam.team_name} className = {styles.teamLogo}/>
+                                                </div>
+                                                <div className={styles.awayteamName}>{game.awayTeam.team_name}</div>
+                                                <AuthIcons>
+                                                    <HeartIcon 
+                                                        team = {game.awayTeam.team_name}
+                                                        logo = {game.awayTeam.logo}
+                                                    />
+                                                </AuthIcons>
+                                            </div>
+                                            : ''
+                                            )
+                                        }
+                                        </div>
                                     )
                                 })
                             }
-                        </Table>
                     </Paper>
                 }
             </div>
