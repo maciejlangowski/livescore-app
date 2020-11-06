@@ -1,5 +1,5 @@
 import React from 'react';
-
+import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import Button from '@material-ui/core/Button';
 import {Redirect} from 'react-router-dom';
 
@@ -26,8 +26,9 @@ class StandingsIcon extends React.Component {
 
         return (
             <Button onClick = {this.handleOnClick} variant="default">
-                <div style={{fontWeight:'700'}}>
-                    ☰ Standings 
+                <div style={{fontWeight:'700', display: 'flex', alignItems:'center'}}>
+                    {/* ☰ Standings  */} 
+                    <FormatListNumberedIcon /> Standings
                 </div>
             </Button>
         ) 

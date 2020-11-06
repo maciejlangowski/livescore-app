@@ -51,16 +51,14 @@ class Livescores extends React.Component {
     }
 
     leagues = [
-        {name:'Premier League', country:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', id: 524},
-        {name:'Ligue 1', country:'France', flag:'🇫🇷', id: 555},
-        {name:'Primera Division', country:'Spain', flag:'🇪🇸'},
+        {name:'Premier League', country:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', id: 2790},
+        {name:'Ligue 1', country:'France', flag:'🇫🇷', id: 2664},
+        {name:'Primera Division', country:'Spain', flag:'🇪🇸', id: 2833},
         {name:'Bundesliga', country:'Germany', flag:'🇩🇪'},
-        {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱'},
-        {name:'Serie A', country:'Italy', flag:'🇮🇹'},
-        {name:'UEFA Champions League', country:'World', flag:'🇪🇺'},
-        {name:'UEFA Europa League', country:'World', flag:'🇪🇺'},
-        {name:'Cup', country:'Turkey', flag:'🇪🇺'},
-        {name:'Youth Championship', country:'Russia', flag:'🇪🇺'},
+        {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱', id: 2680},
+        {name:'Serie A', country:'Italy', flag:'🇮🇹', id: 2857},
+        {name:'UEFA Champions League', country:'World', flag:'🇪🇺', id: 2771},
+        {name:'UEFA Europa League', country:'World', flag:'🇪🇺', id: 2777},
     ]
 
     render() {

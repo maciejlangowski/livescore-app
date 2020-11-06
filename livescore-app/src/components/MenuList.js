@@ -6,7 +6,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import AlarmIcon from '@material-ui/icons/Alarm';
-import ListAltIcon from '@material-ui/icons/ListAlt';
+
 
 const entries = [
     {
@@ -16,18 +16,13 @@ const entries = [
     },
     {
         name: 'Livescores',
-        icon: AlarmIcon,
+        icon: SportsSoccerIcon,
         url: "/livescores"
     },
     {
         name: 'Scores',
-        icon: SportsSoccerIcon,
+        icon: AlarmIcon,
         url: "/scores"
-    },
-    {
-        name: 'Standings',
-        icon: ListAltIcon,
-        url: "/standings"
     },
 
     {

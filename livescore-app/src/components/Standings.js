@@ -6,7 +6,9 @@ import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import PageWrapper from './Pagewrapper';
 import HeartIcon from './HeartIcon';
 import AuthIcons from './AuthIcons';
@@ -52,16 +54,9 @@ class Standings extends React.Component {
         this.fetchData()
     }
 
-    // leagues = [
-    //     {name:'Premier League', id: 524},
-    //     {name:'Ligue 1', id:1},
-    //     {name:'Primera Division', id:1},
-    //     {name:'Bundesliga', id:1},
-    //     {name:'Ekstraklasa', id:1},
-    //     {name:'Serie A', id:1},
-    //     {name:'UEFA Champions League', id:1},
-    //     {name:'UEFA Europa League', id:1},
-    // ]
+    handleOnClick = () => {
+        window.location.href = "/livescores"
+    }
 
     render() {
         return (
@@ -74,6 +69,9 @@ class Standings extends React.Component {
                     ? <PageWrapper><CircularProgress size='350px' /> </PageWrapper>
                     : <Paper elevation={10} className={styles.paperStandings}>
                         <div className = {styles.standingsTableTop}>
+                            <Button onClick = {this.handleOnClick}>
+                                <ArrowBackIcon fontSize='large'/>
+                            </Button>
                             <div className = {styles.standingsLeagueName}>{this.state.standings[0].group}</div>
                         </div>
                         <Table padding='checkbox' size='small'>
