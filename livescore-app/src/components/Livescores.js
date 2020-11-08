@@ -54,8 +54,9 @@ class Livescores extends React.Component {
         {name:'Premier League', country:'England', flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', id: 2790},
         {name:'Ligue 1', country:'France', flag:'🇫🇷', id: 2664},
         {name:'Primera Division', country:'Spain', flag:'🇪🇸', id: 2833},
-        {name:'Bundesliga', country:'Germany', flag:'🇩🇪'},
+        {name:'Bundesliga 1', country:'Germany', flag:'🇩🇪', id: 2755},
         {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱', id: 2680},
+        {name:'I Liga', country:'Poland', flag:'🇵🇱', id: 2742},
         {name:'Serie A', country:'Italy', flag:'🇮🇹', id: 2857},
         {name:'UEFA Champions League', country:'World', flag:'🇪🇺', id: 2771},
         {name:'UEFA Europa League', country:'World', flag:'🇪🇺', id: 2777},
@@ -76,7 +77,7 @@ class Livescores extends React.Component {
                                     return(
                                         <div>
                                             <div className = {styles.tableTop}>
-                                                <div className = {styles.leagueName}>{league.flag} {league.name}</div>
+                                                <div className = {styles.leagueName}>{league.flag} {league.country} -  {league.name}</div>
                                                 <StandingsIcon leagueId = {league.id}/>
                                             </div>
                                         {

@@ -26,14 +26,15 @@ class HeartIcon extends React.Component {
             this.setState({
                 isAdded: true
             })
-        } else {
-                fetch(`https://livescore-app-8a845.firebaseio.com/${currentUser.uid}.json`, {
-                    method: 'DELETE'
-            }).then(
-                this.setState({
-                    isAdded: false
-                })
-            )} 
+        } 
+        // else {
+        //         fetch(`https://livescore-app-8a845.firebaseio.com/${currentUser.uid}.json`, {
+        //             method: 'DELETE'
+        //     }).then(
+        //         this.setState({
+        //             isAdded: false
+        //         })
+        //     )} 
     }
 
     favColor = () => {
