@@ -60,6 +60,7 @@ class Livescores extends React.Component {
         {name:'Serie A', country:'Italy', flag:'🇮🇹', id: 2857},
         {name:'UEFA Champions League', country:'World', flag:'🇪🇺', id: 2771},
         {name:'UEFA Europa League', country:'World', flag:'🇪🇺', id: 2777},
+        {name:'UEFA Nations League', country:'World', flag:'🇪🇺', id: 1422},
     ]
 
     render() {

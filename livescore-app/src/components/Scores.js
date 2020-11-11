@@ -13,18 +13,23 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 
 let dateToday = new Date();
+let dateChanged = new Date(dateToday);
 
 class Scores extends React.Component {
     state = {
         games: [],
         isLoading: true,
-        year: dateToday.getFullYear(),
-        month: dateToday.getMonth()+1,
-        day: dateToday.getDate(),
+        date: dateToday,
+        day: 0
     }
 
     fetchData = () => {
-        let date = `${this.state.year}-${this.state.month}-${this.state.day}`
+
+        let day = this.state.date.getDate();
+        let month = this.state.date.getMonth()+1;
+        let year = this.state.date.getFullYear();
+
+        let date = `${year}-${month}-${day}`;
 
         fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/date/${date}?timezone=Europe%2FWarsaw`, {
             "method": "GET",
@@ -50,30 +55,34 @@ class Scores extends React.Component {
                     isLoading: false
                 })
         })
+                    // this.setState({
+                    //     isLoading: false
+                    // })
     }
 
     componentDidMount() {
         this.fetchData();
-
     }
 
     minusOneDay = () => { 
         this.setState({
-            day: this.state.day -1,
+            day: -1,
+            date: dateChanged,
             isLoading: true
         })
-
-        console.log(this.state.day)
+        dateChanged.setDate(dateChanged.getDate() + this.state.day);
+        console.log(this.state.date)
         this.fetchData();
     }
 
     plusOneDay = () => {       
         this.setState({
-            day: this.state.day +1,
+            day: 1,
+            date: dateChanged,
             isLoading: true
         })
-  
-        console.log(this.state.day)
+        dateChanged.setDate(dateChanged.getDate() + this.state.day)
+        console.log(this.state.date)
         this.fetchData();
     }
 
@@ -87,6 +96,7 @@ class Scores extends React.Component {
         {name:'Serie A', country:'Italy', flag:'🇮🇹', id: 2857},
         {name:'UEFA Champions League', country:'World', flag:'🇪🇺', id: 2771},
         {name:'UEFA Europa League', country:'World', flag:'🇪🇺', id: 2777},
+        {name:'UEFA Nations League', country:'World', flag:'🇪🇺', id: 1422},
     ]
 
     render() {
@@ -104,7 +114,8 @@ class Scores extends React.Component {
                                 <ArrowBackIcon fontSize='large' onClick={this.minusOneDay} /> 
                             </Button>
                             <div className={styles.date}>
-                                {this.state.day}/{this.state.month}/{this.state.year}
+                                {/* {this.state.day}/{this.state.month}/{this.state.year} */}
+                                {this.state.date.getDate()}/{this.state.date.getMonth()+1}/{this.state.date.getFullYear()}
                             </div>
 
                             <Button>
