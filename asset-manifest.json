@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/livescore-app/static/css/main.656f99f5.chunk.css",
-    "main.js": "/livescore-app/static/js/main.bcb8a12b.chunk.js",
-    "main.js.map": "/livescore-app/static/js/main.bcb8a12b.chunk.js.map",
+    "main.css": "/livescore-app/static/css/main.b4ecf76c.chunk.css",
+    "main.js": "/livescore-app/static/js/main.7d6e1c36.chunk.js",
+    "main.js.map": "/livescore-app/static/js/main.7d6e1c36.chunk.js.map",
     "runtime-main.js": "/livescore-app/static/js/runtime-main.7afc499d.js",
     "runtime-main.js.map": "/livescore-app/static/js/runtime-main.7afc499d.js.map",
     "static/js/2.faf2f092.chunk.js": "/livescore-app/static/js/2.faf2f092.chunk.js",
     "static/js/2.faf2f092.chunk.js.map": "/livescore-app/static/js/2.faf2f092.chunk.js.map",
     "index.html": "/livescore-app/index.html",
-    "precache-manifest.1f0c7580a693efc89042d76dc735be3a.js": "/livescore-app/precache-manifest.1f0c7580a693efc89042d76dc735be3a.js",
+    "precache-manifest.c3499532b75dcc59c0070fb24e6a338f.js": "/livescore-app/precache-manifest.c3499532b75dcc59c0070fb24e6a338f.js",
     "service-worker.js": "/livescore-app/service-worker.js",
-    "static/css/main.656f99f5.chunk.css.map": "/livescore-app/static/css/main.656f99f5.chunk.css.map",
+    "static/css/main.b4ecf76c.chunk.css.map": "/livescore-app/static/css/main.b4ecf76c.chunk.css.map",
     "static/js/2.faf2f092.chunk.js.LICENSE.txt": "/livescore-app/static/js/2.faf2f092.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7afc499d.js",
     "static/js/2.faf2f092.chunk.js",
-    "static/css/main.656f99f5.chunk.css",
-    "static/js/main.bcb8a12b.chunk.js"
+    "static/css/main.b4ecf76c.chunk.css",
+    "static/js/main.7d6e1c36.chunk.js"
   ]
 }
