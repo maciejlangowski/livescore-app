@@ -39,9 +39,9 @@ class Standings extends React.Component {
                             ...data[key]
                         }
                     })
-                
-                const standingsData = formattedData[0].standings[0]
-                console.log(standingsData)
+
+                const standingsData = formattedData[0].standings
+                // console.log(standingsData)
 
                 this.setState({
                     standings: standingsData,
@@ -72,7 +72,7 @@ class Standings extends React.Component {
                             <Button onClick = {this.handleOnClick}>
                                 <ArrowBackIcon fontSize='large'/>
                             </Button>
-                            <div className = {styles.standingsLeagueName}>{this.state.standings[0].group}</div>
+                            <div className = {styles.standingsLeagueName}>{this.state.standings[0][0].group}</div>,
                         </div>
                         <Table padding='checkbox' size='small'>
                             <TableHead>
@@ -89,35 +89,45 @@ class Standings extends React.Component {
                                     <TableCell></TableCell>
                                 </TableRow>
                             </TableHead>
-                            <TableBody>
+                            {/* <TableBody> */}
                                 {
-                                    this.state.standings.map((team) => {
-                                        return (
-                                            <TableRow>
-                                                <TableCell>{team.rank}</TableCell>
-                                                <TableCell>
-                                                    <img src = {team.logo} alt = {team.teamName} className = {styles.teamLogo}/>
-                                                </TableCell>
-                                                <TableCell><div className={styles.standingsCell}>{team.teamName}</div></TableCell>
-                                                <TableCell><div className={styles.standingsCell}>{team.all.matchsPlayed}</div></TableCell>
-                                                <TableCell><div className={styles.standingsCell}>{team.all.win}</div></TableCell>
-                                                <TableCell><div className={styles.standingsCell}>{team.all.draw}</div></TableCell>
-                                                <TableCell><div className={styles.standingsCell}>{team.all.lose}</div></TableCell>
-                                                <TableCell><div className={styles.standingsCell}>{team.all.goalsFor} : {team.all.goalsAgainst}</div></TableCell>
-                                                <TableCell><div className={styles.standingsCell}>{team.points}</div></TableCell>
-                                                <TableCell>
-                                                    <AuthIcons>
-                                                        <HeartIcon 
-                                                            team = {team.teamName}
-                                                            logo = {team.logo}
-                                                        />
-                                                    </AuthIcons>
-                                                </TableCell>
-                                            </TableRow>
+                                    this.state.standings.map((groups) => {
+                                        return( 
+                                            groups.map((team) => {
+                                                return(
+                                                        <TableBody>
+
+                                        
+                                                        <TableRow>
+                                                            <TableCell>{team.rank}</TableCell>
+                                                            <TableCell>
+                                                                <img src = {team.logo} alt = {team.teamName} className = {styles.teamLogo}/>
+                                                            </TableCell>
+                                                            <TableCell><div className={styles.standingsCell}>{team.teamName}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCell}>{team.all.matchsPlayed}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCell}>{team.all.win}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCell}>{team.all.draw}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCell}>{team.all.lose}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCell}>{team.all.goalsFor} : {team.all.goalsAgainst}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCell}>{team.points}</div></TableCell>
+                                                            <TableCell>
+                                                                <AuthIcons>
+                                                                    <HeartIcon 
+                                                                        team = {team.teamName}
+                                                                        logo = {team.logo}
+                                                                    />
+                                                                </AuthIcons>
+                                                            </TableCell>
+                                                        </TableRow>
+                                                    </TableBody>
+                                                    
+                                                )
+                                            })
                                         )
+
                                     })
                                 }
-                            </TableBody>
+                            {/* </TableBody> */}
                         </Table>
                     </Paper>
                 }
