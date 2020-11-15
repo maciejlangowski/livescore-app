@@ -6,6 +6,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
 import AlarmIcon from '@material-ui/icons/Alarm';
+import DateRangeIcon from '@material-ui/icons/DateRange';
+import LiveTvIcon from '@material-ui/icons/LiveTv';
 
 
 const entries = [
@@ -16,13 +18,19 @@ const entries = [
     },
     {
         name: 'Livescores',
-        icon: SportsSoccerIcon,
+        icon: LiveTvIcon,
         url: "/livescores"
     },
     {
         name: 'Scores',
-        icon: AlarmIcon,
+        icon: SportsSoccerIcon,
         url: "/scores"
+    },
+
+    {
+        name: 'Schedule',
+        icon: DateRangeIcon,
+        url: "/schedule"
     },
 
     {

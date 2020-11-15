@@ -15,7 +15,7 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 let dateToday = new Date();
 let dateChanged = new Date(dateToday);
 
-class Scores extends React.Component {
+class Schedule extends React.Component {
     state = {
         games: [],
         isLoading: true,
@@ -85,7 +85,7 @@ class Scores extends React.Component {
         console.log(this.state.date)
         this.fetchData();
     }
-    
+
     goToToday = () => {
         this.setState({
             date: dateToday,
@@ -113,29 +113,30 @@ class Scores extends React.Component {
         return (
             <div className = {styles.livescoreTable}>
                 <div className = {styles.headerDiv}>
-                    <h1>SCORES</h1>
+                    <h1>SCHEDULE</h1>
                 </div>
                 {
                     this.state.isLoading
                     ? <PageWrapper><CircularProgress size='350px' /> </PageWrapper>
                     : <Paper elevation={10} className={styles.paper}>
                         <div className={styles.dateDiv}>
-                            <Button variant='contained'>
-                                <ArrowBackIcon fontSize='large' onClick={this.minusOneDay} /> 
+                            {
+                                this.state.date > dateToday 
+                                ? <Button variant='contained'>
+                                    <ArrowBackIcon fontSize='large' onClick={this.minusOneDay} /> 
+                                </Button>
+                                : <Button variant='contained' disabled>
+                                <ArrowBackIcon fontSize='large'/> 
                             </Button>
+                            }
+                            
                             <div className={styles.date}>
                                 {this.state.date.getDate()}/{this.state.date.getMonth()+1}/{this.state.date.getFullYear()}
                             </div>
                             
-                            {
-                                this.state.date < dateToday 
-                                ? <Button variant='contained'>
-                                    <ArrowForwardIcon fontSize='large' onClick={this.plusOneDay} /> 
+                                <Button variant='contained'>
+                                    <ArrowForwardIcon fontSize='large' onClick={this.plusOneDay}  /> 
                                 </Button>
-                                : <Button variant='contained' disabled>
-                                <ArrowForwardIcon fontSize='large'/> 
-                            </Button>
-                            }
                         </div>
                         <div className = {styles.todayButton}>
                             <Button variant='contained' onClick={this.goToToday}>Go to today</Button>
@@ -149,8 +150,8 @@ class Scores extends React.Component {
                                                 <StandingsIcon leagueId = {league.id}/>
                                             </div>
                                         {
-                                            this.state.games.map(game => game.league.name === league.name && game.league.country === league.country && game.statusShort === 'FT'
-                                            ? <div className = {styles.scoreRow}>
+                                            this.state.games.map(game => game.league.name === league.name && game.league.country === league.country && game.statusShort === 'NS'
+                                            ? <div className = {styles.scheduleRow}>
                                                 <AuthIcons>
                                                         <HeartIcon 
                                                             team = {game.homeTeam.team_name}
@@ -161,8 +162,14 @@ class Scores extends React.Component {
                                                 <div className = {styles.homeLogo}>
                                                     <img src = {game.homeTeam.logo} alt = {game.homeTeam.team_name} className = {styles.teamLogo}/>
                                                 </div>
-                                                <div className={styles.score}>
-                                                    {game.goalsHomeTeam} : {game.goalsAwayTeam} <br/>
+                                                <div className={styles.scheduleTime}>
+                                                    {
+                                                        game.event_date.slice(11,16) 
+                                                    }
+                                                    <br/>
+                                                    {
+                                                        game.venue && game.venue.slice(0,25)
+                                                    }
                                                 </div>
                                                 <div className = {styles.awayLogo}>
                                                     <img src = {game.awayTeam.logo} alt = {game.awayTeam.team_name} className = {styles.teamLogo}/>
@@ -189,4 +196,4 @@ class Scores extends React.Component {
     }
 }
 
-export default Scores;
+export default Schedule;

@@ -38,7 +38,7 @@ class Livescores extends React.Component {
                 this.setState({
                     games: gameData,
                     isLoading: false
-                })
+                })  
         })
     }
 

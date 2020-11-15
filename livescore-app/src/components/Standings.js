@@ -69,10 +69,10 @@ class Standings extends React.Component {
                     ? <PageWrapper><CircularProgress size='350px' /> </PageWrapper>
                     : <Paper elevation={10} className={styles.paperStandings}>
                         <div className = {styles.standingsTableTop}>
-                            <Button onClick = {this.handleOnClick}>
+                            <Button onClick = {this.handleOnClick} variant='contained'>
                                 <ArrowBackIcon fontSize='large'/>
                             </Button>
-                            <div className = {styles.standingsLeagueName}>{this.state.standings[0][0].group}</div>,
+                            <div className = {styles.standingsLeagueName}>{this.state.standings[0][0].group}</div>
                         </div>
                         <Table padding='checkbox' size='small'>
                             <TableHead>
@@ -95,9 +95,7 @@ class Standings extends React.Component {
                                         return( 
                                             groups.map((team) => {
                                                 return(
-                                                        <TableBody>
-
-                                        
+                                                    <TableBody>
                                                         <TableRow>
                                                             <TableCell>{team.rank}</TableCell>
                                                             <TableCell>

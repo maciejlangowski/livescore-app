@@ -30,7 +30,7 @@ class Auth extends React.Component {
             ? this.props.children
             : <Paper className={styles.paper}>
                 <Pagewrapper>
-                    <h1>Aby wyświetlić tę stronę, musisz się zalogować</h1>
+                    <h1>Only logged users can see this page. Please sign in.</h1>
                 </Pagewrapper>
             </Paper>
             

@@ -25,9 +25,8 @@ class StandingsIcon extends React.Component {
         }
 
         return (
-            <Button onClick = {this.handleOnClick} variant="default">
+            <Button onClick = {this.handleOnClick} variant="contained">
                 <div style={{fontWeight:'700', display: 'flex', alignItems:'center'}}>
-                    {/* ☰ Standings  */} 
                     <FormatListNumberedIcon /> Standings
                 </div>
             </Button>
