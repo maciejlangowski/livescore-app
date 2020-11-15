@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/livescore-app/static/css/main.b4ecf76c.chunk.css",
-    "main.js": "/livescore-app/static/js/main.7d6e1c36.chunk.js",
-    "main.js.map": "/livescore-app/static/js/main.7d6e1c36.chunk.js.map",
+    "main.css": "/livescore-app/static/css/main.90fc663b.chunk.css",
+    "main.js": "/livescore-app/static/js/main.950714e7.chunk.js",
+    "main.js.map": "/livescore-app/static/js/main.950714e7.chunk.js.map",
     "runtime-main.js": "/livescore-app/static/js/runtime-main.7afc499d.js",
     "runtime-main.js.map": "/livescore-app/static/js/runtime-main.7afc499d.js.map",
-    "static/js/2.faf2f092.chunk.js": "/livescore-app/static/js/2.faf2f092.chunk.js",
-    "static/js/2.faf2f092.chunk.js.map": "/livescore-app/static/js/2.faf2f092.chunk.js.map",
+    "static/js/2.3816a813.chunk.js": "/livescore-app/static/js/2.3816a813.chunk.js",
+    "static/js/2.3816a813.chunk.js.map": "/livescore-app/static/js/2.3816a813.chunk.js.map",
     "index.html": "/livescore-app/index.html",
-    "precache-manifest.c3499532b75dcc59c0070fb24e6a338f.js": "/livescore-app/precache-manifest.c3499532b75dcc59c0070fb24e6a338f.js",
+    "precache-manifest.71ebace9b6735a5b130aaabd308830ff.js": "/livescore-app/precache-manifest.71ebace9b6735a5b130aaabd308830ff.js",
     "service-worker.js": "/livescore-app/service-worker.js",
-    "static/css/main.b4ecf76c.chunk.css.map": "/livescore-app/static/css/main.b4ecf76c.chunk.css.map",
-    "static/js/2.faf2f092.chunk.js.LICENSE.txt": "/livescore-app/static/js/2.faf2f092.chunk.js.LICENSE.txt"
+    "static/css/main.90fc663b.chunk.css.map": "/livescore-app/static/css/main.90fc663b.chunk.css.map",
+    "static/js/2.3816a813.chunk.js.LICENSE.txt": "/livescore-app/static/js/2.3816a813.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7afc499d.js",
-    "static/js/2.faf2f092.chunk.js",
-    "static/css/main.b4ecf76c.chunk.css",
-    "static/js/main.7d6e1c36.chunk.js"
+    "static/js/2.3816a813.chunk.js",
+    "static/css/main.90fc663b.chunk.css",
+    "static/js/main.950714e7.chunk.js"
   ]
 }
