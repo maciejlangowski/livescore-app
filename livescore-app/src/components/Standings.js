@@ -113,6 +113,7 @@ class Standings extends React.Component {
                                                                     <HeartIcon 
                                                                         team = {team.teamName}
                                                                         logo = {team.logo}
+                                                                        id = {team.team_id}
                                                                     />
                                                                 </AuthIcons>
                                                             </TableCell>

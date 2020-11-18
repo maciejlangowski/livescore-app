@@ -20,7 +20,8 @@ class HeartIcon extends React.Component {
       
                 databaseRef.set({
                   'team': this.props.team,
-                  'logo': this.props.logo
+                  'logo': this.props.logo,
+                  'team_id' : this.props.id
                 }) 
             
             this.setState({

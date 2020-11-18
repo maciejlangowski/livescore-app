@@ -120,7 +120,6 @@ h1 {
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.95rem;
-    /* text-transform: uppercase; */
 }
 
 .teamLogo {
@@ -156,7 +155,6 @@ h1 {
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.95rem;
-    /* text-transform: uppercase; */
 }
 
 /* Schedule */
@@ -191,9 +189,15 @@ h1 {
 
 .favouriteTeamList {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 0 1rem
 } 
+
+.lastFive {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
 
 /*Standings */
 

@@ -88,6 +88,7 @@ class Livescores extends React.Component {
                                                         <HeartIcon 
                                                             team = {game.homeTeam.team_name}
                                                             logo = {game.homeTeam.logo}
+                                                            id = {game.homeTeam.team_id}
                                                         />
                                                 </AuthIcons>
                                                 <div className={styles.hometeamName}>{game.homeTeam.team_name}</div>
@@ -106,6 +107,7 @@ class Livescores extends React.Component {
                                                     <HeartIcon 
                                                         team = {game.awayTeam.team_name}
                                                         logo = {game.awayTeam.logo}
+                                                        id = {game.awayTeam.team_id}
                                                     />
                                                 </AuthIcons>
                                             </div>

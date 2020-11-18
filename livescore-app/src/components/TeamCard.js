@@ -47,8 +47,10 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+let gamesArray ;
+let games;
 
-const TeamCard = ({team, logo, id, onDelete}) => {
+const TeamCard = ({team, logo, id, onDelete, team_id}) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -67,6 +69,41 @@ const TeamCard = ({team, logo, id, onDelete}) => {
           onDelete();
         })
   }
+
+
+    fetch(`https://api-football-v1.p.rapidapi.com/v2/fixtures/team/${team_id}/last/5?timezone=Europe%2FWarsaw`, {
+	    "method": "GET",
+	    "headers": {
+		      "x-rapidapi-key": "de72cb93f1msh79eed2358f04a0ap1d0820jsndaca24b70bf1",
+		      "x-rapidapi-host": "api-football-v1.p.rapidapi.com"
+	      }
+    })
+      .then(response => response.json())
+      .then(data => {
+          const formattedData = Object.keys(data)
+              .map(key => {
+                  return {
+                      id: key,
+                      ...data[key]
+                  }
+              });
+            
+              gamesArray = formattedData[0].fixtures
+              
+              games = gamesArray.map((game) => {
+                return (
+                  <div className={styles.lastFive}>
+                    <div>
+                      ⋆ {game.homeTeam.team_name} vs. {game.awayTeam.team_name}
+                    </div>
+                    <div>
+                      {game.goalsHomeTeam}:{game.goalsAwayTeam} <br/>
+                    </div>
+                  </div>
+                )
+              })
+            })
+  
   
 
   return (
@@ -114,7 +151,7 @@ const TeamCard = ({team, logo, id, onDelete}) => {
         <CardContent>
           <Typography paragraph>Last five games:  </Typography>
           <Typography paragraph>
-              {team}
+              {games}
           </Typography>
 
         </CardContent>
