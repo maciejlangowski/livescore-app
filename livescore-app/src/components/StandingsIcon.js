@@ -2,6 +2,7 @@ import React from 'react';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import Button from '@material-ui/core/Button';
 import {Redirect} from 'react-router-dom';
+import styles from './styles.module.css'
 
 let leagueID;
 
@@ -26,8 +27,11 @@ class StandingsIcon extends React.Component {
 
         return (
             <Button onClick = {this.handleOnClick} variant="contained">
-                <div style={{fontWeight:'700', display: 'flex', alignItems:'center'}}>
-                    <FormatListNumberedIcon /> Standings
+                <div className={styles.standingsButton}>
+                    <FormatListNumberedIcon fontSize='small'/> 
+                    <div className={styles.standingsLogoText}>
+                        Standings
+                    </div>
                 </div>
             </Button>
         ) 

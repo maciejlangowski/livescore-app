@@ -104,9 +104,9 @@ class Scores extends React.Component {
         {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱', id: 2680},
         {name:'I Liga', country:'Poland', flag:'🇵🇱', id: 2742},
         {name:'Serie A', country:'Italy', flag:'🇮🇹', id: 2857},
-        {name:'UEFA Champions League', country:'World', flag:'🇪🇺', id: 2771},
-        {name:'UEFA Europa League', country:'World', flag:'🇪🇺', id: 2777},
-        {name:'UEFA Nations League', country:'World', flag:'🇪🇺', id: 1422},
+        {name:'Champions League', country:'World', flag:'🇪🇺', id: 2771},
+        {name:'Europa League', country:'World', flag:'🇪🇺', id: 2777},
+        {name:'Nations League', country:'World', flag:'🇪🇺', id: 1422},
     ]
 
     render() {
@@ -121,7 +121,7 @@ class Scores extends React.Component {
                     : <Paper elevation={10} className={styles.paper}>
                         <div className={styles.dateDiv}>
                             <Button variant='contained'>
-                                <ArrowBackIcon fontSize='large' onClick={this.minusOneDay} /> 
+                                <ArrowBackIcon fontSize='small' onClick={this.minusOneDay} /> 
                             </Button>
                             <div className={styles.date}>
                                 {this.state.date.getDate()}/{this.state.date.getMonth()+1}/{this.state.date.getFullYear()}
@@ -130,10 +130,10 @@ class Scores extends React.Component {
                             {
                                 this.state.date < dateToday 
                                 ? <Button variant='contained'>
-                                    <ArrowForwardIcon fontSize='large' onClick={this.plusOneDay} /> 
+                                    <ArrowForwardIcon fontSize='small' onClick={this.plusOneDay} /> 
                                 </Button>
                                 : <Button variant='contained' disabled>
-                                <ArrowForwardIcon fontSize='large'/> 
+                                <ArrowForwardIcon fontSize='small'/> 
                             </Button>
                             }
                         </div>
@@ -145,11 +145,11 @@ class Scores extends React.Component {
                                     return(
                                         <div>
                                             <div className = {styles.tableTop}>
-                                                <div className = {styles.leagueName}>{league.flag} {league.country} - {league.name}</div>
+                                                <div className = {styles.leagueName}>{league.flag} {league.name}</div>
                                                 <StandingsIcon leagueId = {league.id}/>
                                             </div>
                                         {
-                                            this.state.games.map(game => game.league.name === league.name && game.league.country === league.country && game.statusShort === 'FT'
+                                            this.state.games.map(game => game.league_id === league.id && game.statusShort === 'FT'
                                             ? <div className = {styles.scoreRow}>
                                                 <AuthIcons>
                                                         <HeartIcon 

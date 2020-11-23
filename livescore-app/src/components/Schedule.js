@@ -104,9 +104,9 @@ class Schedule extends React.Component {
         {name:'Ekstraklasa', country:'Poland', flag:'🇵🇱', id: 2680},
         {name:'I Liga', country:'Poland', flag:'🇵🇱', id: 2742},
         {name:'Serie A', country:'Italy', flag:'🇮🇹', id: 2857},
-        {name:'UEFA Champions League', country:'World', flag:'🇪🇺', id: 2771},
-        {name:'UEFA Europa League', country:'World', flag:'🇪🇺', id: 2777},
-        {name:'UEFA Nations League', country:'World', flag:'🇪🇺', id: 1422},
+        {name:'Champions League', country:'World', flag:'🇪🇺', id: 2771},
+        {name:'Europa League', country:'World', flag:'🇪🇺', id: 2777},
+        {name:'Nations League', country:'World', flag:'🇪🇺', id: 1422},
     ]
 
     render() {
@@ -118,15 +118,15 @@ class Schedule extends React.Component {
                 {
                     this.state.isLoading
                     ? <PageWrapper><CircularProgress size='350px' /> </PageWrapper>
-                    : <Paper elevation={10} className={styles.paper}>
+                    : <Paper elevation={10} className={styles.paperSchedule}>
                         <div className={styles.dateDiv}>
                             {
                                 this.state.date > dateToday 
                                 ? <Button variant='contained'>
-                                    <ArrowBackIcon fontSize='large' onClick={this.minusOneDay} /> 
+                                    <ArrowBackIcon fontSize='small' onClick={this.minusOneDay} /> 
                                 </Button>
                                 : <Button variant='contained' disabled>
-                                <ArrowBackIcon fontSize='large'/> 
+                                <ArrowBackIcon fontSize='small'/> 
                             </Button>
                             }
                             
@@ -135,7 +135,7 @@ class Schedule extends React.Component {
                             </div>
                             
                                 <Button variant='contained'>
-                                    <ArrowForwardIcon fontSize='large' onClick={this.plusOneDay}  /> 
+                                    <ArrowForwardIcon fontSize='small' onClick={this.plusOneDay}  /> 
                                 </Button>
                         </div>
                         <div className = {styles.todayButton}>
@@ -146,11 +146,11 @@ class Schedule extends React.Component {
                                     return(
                                         <div>
                                             <div className = {styles.tableTop}>
-                                                <div className = {styles.leagueName}>{league.flag} {league.country} - {league.name}</div>
+                                                <div className = {styles.leagueName}>{league.flag} {league.name}</div>
                                                 <StandingsIcon leagueId = {league.id}/>
                                             </div>
                                         {
-                                            this.state.games.map(game => game.league.name === league.name && game.league.country === league.country && game.statusShort === 'NS'
+                                            this.state.games.map(game => game.league_id === league.id && game.statusShort === 'NS'
                                             ? <div className = {styles.scheduleRow}>
                                                 <AuthIcons>
                                                         <HeartIcon 
@@ -167,10 +167,10 @@ class Schedule extends React.Component {
                                                     {
                                                         game.event_date.slice(11,16) 
                                                     }
-                                                    <br/>
+                                                    {/* <br/>
                                                     {
                                                         game.venue && game.venue.slice(0,25)
-                                                    }
+                                                    } */}
                                                 </div>
                                                 <div className = {styles.awayLogo}>
                                                     <img src = {game.awayTeam.logo} alt = {game.awayTeam.team_name} className = {styles.teamLogo}/>
