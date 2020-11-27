@@ -28,7 +28,7 @@ class Auth extends React.Component {
         return(
             this.state.user
             ? this.props.children
-            : <Paper className={styles.paper}>
+            : <Paper className={styles.paperAuth}>
                 <Pagewrapper>
                     <h1>Only logged users can see this page. Please sign in.</h1>
                 </Pagewrapper>

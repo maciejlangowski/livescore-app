@@ -35,13 +35,13 @@ class SignInGoogle extends React.Component {
                     this.state.isSignedIn 
                     ? <Redirect to="/livescores" /> 
                     : (
-                        <Paper className={styles.paperSignIn}>
+                        <div className={styles.paperSignIn}>
+
                             <StyledFirebaseAuth
                                 uiConfig={this.uiConfig}
                                 firebaseAuth={firebase.auth()}
                             />
-                        </Paper>
-                        
+                        </div>                    
                     )
                 }
             </div>

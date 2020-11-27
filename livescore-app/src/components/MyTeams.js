@@ -50,14 +50,14 @@ class MyTeams extends React.Component {
         return (  
             <Auth>
                 <div className={styles.signInContainer}>
-                    <Paper className={styles.paper}>
-                        <h1 className={styles.header}>Your favourite teams</h1>
-                    </Paper>
+                    <div className = {styles.headerDiv}>
+                        <h1>FAVOURITE TEAMS</h1>
+                    </div>
                 </div>
                        
                 {
                     this.state.isLoading 
-                    ? <PageWrapper><CircularProgress size='350px' /> </PageWrapper>
+                    ? <PageWrapper><CircularProgress size='150px' /> </PageWrapper>
                     : <div>
                         <div className={styles.favouriteTeamList}>
                         {

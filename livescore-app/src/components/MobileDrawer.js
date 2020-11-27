@@ -7,6 +7,7 @@ import List from '@material-ui/core/List';
 import MenuList from './MenuList'
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 const useStyles = makeStyles({
     list: {
@@ -32,6 +33,7 @@ export default function TemporaryDrawer() {
         setState({ ...state, [anchor]: open });
     };
 
+
     const list = (anchor) => (
         <div
             className={clsx(classes.list, {
@@ -39,23 +41,26 @@ export default function TemporaryDrawer() {
             })}
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
             dismissible
         >
             <List>
+                <HighlightOffIcon
+                    style = {{position: 'relative', left:'210px'}}
+                    fontSize = 'large'
+                    onClick = {toggleDrawer(anchor, false)}
+                />
                 <MenuList />
-                {/* <div style={{ marginLeft: "auto", marginRight: "auto" }}> <ShareButton /></div> */}
             </List>
         </div>
     );
 
     return (
         <div>
-
+            
             {['left'].map((anchor) => (
                 <IconButton key={anchor} edge="start" className={classes.menuButton} color="inherit" aria-label="menu" >
                     <MenuIcon onClick={toggleDrawer(anchor, true)} />
-                    <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                    <Drawer anchor={anchor} open={state[anchor]}>
                         {list(anchor)}
                     </Drawer>
                 </IconButton>

@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import SignInButton from './SignInButton';
 import TemporaryDrawer from './MobileDrawer'
+import styles from './styles.module.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +31,9 @@ export default function ButtonAppBar() {
                 <Toolbar>
                     <TemporaryDrawer />
                     <Typography variant="h6" className={classes.title}>
-                        LIVESCORE APP
+                        <div className={styles.livescoreApp}>
+                            LIVESCORE APP
+                        </div>
                     </Typography>
                     <SignInButton />
                 </Toolbar>

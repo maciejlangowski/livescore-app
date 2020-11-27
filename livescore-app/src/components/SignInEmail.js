@@ -108,21 +108,23 @@ class SignInEmail extends React.Component {
                                 onChange={this.handleOnChange}
                                 value={this.state.password}
                             />
-                            <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                color="primary"
-                            >
-                                {this.props.isSignUp ? "Sign Up" : "Sign In"}
-                                
-                            </Button>
+                            <div className={styles.signInButton}>
+                                <Button
+                                    type="submit"
+                                    fullWidth
+                                    variant="contained"
+                                    color="primary"
+                                >
+                                    {this.props.isSignUp ? "Sign Up" : "Sign In"}
+                                    
+                                </Button>
+                            </div>
                             <Grid container>
                                     <Link href="#" variant="body2">
                                         {
                                             this.props.isSignUp
-                                            ? <Link to='/signin'>Already have an account? Sign In! </Link>
-                                            : <Link to='/signup'>Don't have an account yet? Sign Up! </Link>
+                                            ? <Link to='/signin'>Already have an account? Sign In</Link>
+                                            : <Link to='/signup'>Don't have an account yet? Sign Up!</Link>
                                         }
                                     </Link>
                             

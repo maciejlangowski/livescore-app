@@ -93,7 +93,7 @@ h1 {
 }
 
 .tableTop {
-    margin-top: 1rem;
+    margin: 1rem 0 0.5rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -178,7 +178,7 @@ h1 {
 .scheduleRow {
     padding: 0.25rem;
     display: grid;
-    grid-template-columns: 0.5fr 10fr 1fr 1fr 1fr 10fr 0.5fr;
+    grid-template-columns: 0.5fr 10fr 2fr 1fr 2fr 10fr 0.5fr;
 }
 
 .todayButton {
@@ -188,9 +188,8 @@ h1 {
 }
 
 /*MyTeams */
-
 .teamCard {
-    margin: 1rem
+    margin: 0.5rem
 }
 
 .favouriteTeamList {
@@ -201,8 +200,10 @@ h1 {
 
 .lastFive {
     font-weight: 700;
-    display: flex;
-    justify-content: space-between;
+    margin: 0.5rem 0;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4,1fr);
+    text-align: center;
 }
 
 /*Standings */
@@ -218,7 +219,6 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
-
 }
 
 .standingsTableTop {
@@ -242,10 +242,11 @@ h1 {
 
 .divSignIn {
     opacity: 0.95;
+    width: 450px;
 }
 
 .containerSignIn {
-    padding: 1rem 0 3rem 0;
+    padding: 1rem 0 2rem 0;
     margin: 1rem;
 } 
 
@@ -257,9 +258,14 @@ h1 {
 }
 
 .paperSignIn {
-    margin: 0.5rem;
-    padding: 1rem 6rem ;
+    background-color: white;
+    margin: 0.5rem auto;
+    padding: 1rem;
     opacity: 0.9;
+}
+
+.signInButton {
+    margin-bottom: 0.5rem;
 }
 
 /* Standings button */
@@ -267,6 +273,14 @@ h1 {
     font-weight: 700;
     display: flex;
     align-items: center;
+}
+
+/*Auth */
+.paperAuth {
+    width: 600px;
+    padding: 0.8rem;
+    margin: 0.5rem auto;
+    opacity: 0.85
 }
 
 /* Responsiveness */
@@ -281,6 +295,10 @@ h1 {
     .paperStandings {
         width: 65%
     }
+
+    .favouriteTeamList {
+        grid-template-columns: repeat(4, 1fr);
+    } 
 }
 
 @media (max-width: 1100px) {
@@ -291,18 +309,22 @@ h1 {
         width: 65%;
     }
 
-
     .paperStandings {
         width: 75%
     }
 
+    .favouriteTeamList {
+        grid-template-columns: repeat(3, 1fr);
+    } 
+
 }
 
-@media (max-width: 900px) {
+@media (max-width: 959px) {
     .paper{
         width: 80%;
         margin: 0 auto
     }
+
     .paperSchedule {
         width: 85%;
     }
@@ -310,7 +332,6 @@ h1 {
     .hometeamName, .awayteamName {
         font-size: 0.8rem;
     }
-
     
     .standingsCellToHide {
         display: none
@@ -323,9 +344,33 @@ h1 {
     .loggedUser {
         padding-right: 30px;
     }
+
+    .headerTeams{
+        font-size: 1.4rem;
+    }
+
+    .favouriteTeamList {
+        grid-template-columns: repeat(3, 1fr);
+    } 
+
+    .paperAuth {
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px) {
+    .favouriteTeamList {
+        grid-template-columns: repeat(2, 1fr);
+    } 
 }
 
 @media (max-width: 568px) {
+    h1 {
+        font-size: 1.25rem;
+        letter-spacing: 0;
+        margin: 0.2rem;
+    }
+
     .gameRow, .scoreRow, .scheduleRow { 
         grid-template-columns: 0.5fr 6fr 4fr 6fr 0.5fr;
     }
@@ -360,6 +405,46 @@ h1 {
         display: none;
     }
 
+    .loginHeader {
+        font-size: 1.8rem;
+    }
+
+    .divSignIn {
+        width: 80%;
+    }
+
+    .paperSignIn {
+        padding: 1rem 0;
+    }
+    
+    .headerTeams{
+        font-size: 1.2rem;
+    }
+
+    .favouriteTeamList {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 0 2rem
+    } 
+
+
+}
+
+@media (max-width: 350px) {
+    .livescoreApp {
+        font-size: 0.85rem;
+    }
+
+    .favouriteTeamList {
+        margin: 0 1rem
+    } 
+
+    .lastFive {
+        grid-template-columns: repeat(4,1fr)
+    }
+
+    .eventDate {
+        display: none;
+    }
 }
 
 

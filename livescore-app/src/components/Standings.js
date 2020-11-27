@@ -66,7 +66,7 @@ class Standings extends React.Component {
                 </div>
                 {
                     this.state.isLoading
-                    ? <PageWrapper><CircularProgress size='350px' /> </PageWrapper>
+                    ? <PageWrapper><CircularProgress size='150px' /> </PageWrapper>
                     : <Paper elevation={10} className={styles.paperStandings}>
                         <div className = {styles.standingsTableTop}>
                             <Button onClick = {this.handleOnClick} variant='contained'>

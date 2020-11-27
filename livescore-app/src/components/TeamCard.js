@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
   delIcon: {
     position: 'relative',
-    top: '8px',
+    top: '10px',
     // right: '0px'
   }
 
@@ -93,12 +93,11 @@ const TeamCard = ({team, logo, id, onDelete, team_id}) => {
               games = gamesArray.map((game) => {
                 return (
                   <div className={styles.lastFive}>
-                    <div>
-                      ⋆ {game.homeTeam.team_name} vs. {game.awayTeam.team_name}
-                    </div>
-                    <div>
-                      {game.goalsHomeTeam}:{game.goalsAwayTeam} <br/>
-                    </div>
+                      <div className={styles.eventDate}>{game.event_date.slice(5,10)}</div>
+                      <img src = {game.homeTeam.logo} alt = {game.homeTeam.team_name} className = {styles.teamLogo}/>
+                      vs.
+                      <img src = {game.awayTeam.logo} alt = {game.awayTeam.team_name} className = {styles.teamLogo}/>
+                      {game.goalsHomeTeam}:{game.goalsAwayTeam}
                   </div>
                 )
               })
@@ -121,7 +120,7 @@ const TeamCard = ({team, logo, id, onDelete, team_id}) => {
       
       <CardMedia
         className={classes.media}
-        style = {{width : '55%', position: 'relative', left: '60px'}}
+        style = {{width : '56%', margin: 'auto'}}
         image={logo}
       />
       <CardContent>
