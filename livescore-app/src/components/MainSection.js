@@ -23,6 +23,7 @@ import MyTeams from './MyTeams';
 import SignIn from './SignIn';
 import SignInButton from './SignInButton'
 import SignInEmail from './SignInEmail';
+import ButtonAppBar from './MainSectionMobile'
 
 const drawerWidth = 300
 
@@ -105,9 +106,9 @@ export default function MainSection() {
   return (
     <BrowserRouter className={styles.main}>
       <Hidden xlUp>
-        <Button></Button>
-
+        <ButtonAppBar />
       </Hidden>
+      
       <div className={classes.root}>
         <Hidden smDown>
           <AppBar

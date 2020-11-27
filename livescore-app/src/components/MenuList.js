@@ -5,7 +5,6 @@ import Divider from '@material-ui/core/Divider';
 import HomeIcon from '@material-ui/icons/Home';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import SportsSoccerIcon from '@material-ui/icons/SportsSoccer';
-import AlarmIcon from '@material-ui/icons/Alarm';
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import LiveTvIcon from '@material-ui/icons/LiveTv';
 

@@ -3,7 +3,6 @@
     background-image: url('https://images.unsplash.com/photo-1544914379-806667cd9489?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
     background-size: cover;
     width: 100%;
-
 }
 
 h1 {
@@ -37,6 +36,7 @@ h1 {
     top: 15px;
     right: 10px;
 }
+
 .loggedUser {
     padding-right: 50px;
     font-size: 1.25rem;
@@ -218,15 +218,23 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
+
 }
 
 .standingsTableTop {
     margin-bottom: 1rem;
 }
 
-.standingsCell{
+.standingsCell {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.standingsCellToHide {
+    width: 20%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
@@ -269,6 +277,10 @@ h1 {
     .paperSchedule {
         width: 55%;
     }
+
+    .paperStandings {
+        width: 65%
+    }
 }
 
 @media (max-width: 1100px) {
@@ -278,9 +290,15 @@ h1 {
     .paperSchedule {
         width: 65%;
     }
+
+
+    .paperStandings {
+        width: 75%
+    }
+
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
     .paper{
         width: 80%;
         margin: 0 auto
@@ -291,6 +309,19 @@ h1 {
 
     .hometeamName, .awayteamName {
         font-size: 0.8rem;
+    }
+
+    
+    .standingsCellToHide {
+        display: none
+    }
+
+    .standingsLeagueName {
+        font-size: 1.2rem;
+    }
+
+    .loggedUser {
+        padding-right: 30px;
     }
 }
 
@@ -323,6 +354,10 @@ h1 {
 
     .todayButton {
         font-size: 0.5rem;
+    }
+
+    .loggedUser {
+        display: none;
     }
 
 }

@@ -81,15 +81,14 @@ class Standings extends React.Component {
                                     <TableCell></TableCell>
                                     <TableCell></TableCell>
                                     <TableCell><div className={styles.standingsCell}>GP</div></TableCell>
-                                    <TableCell><div className={styles.standingsCell}>W</div></TableCell>
-                                    <TableCell><div className={styles.standingsCell}>D</div></TableCell>
-                                    <TableCell><div className={styles.standingsCell}>L</div></TableCell>
+                                    <TableCell><div className={styles.standingsCellToHide}>W</div></TableCell>
+                                    <TableCell><div className={styles.standingsCellToHide}>D</div></TableCell>
+                                    <TableCell><div className={styles.standingsCellToHide}>L</div></TableCell>
                                     <TableCell><div className={styles.standingsCell}>Goals</div></TableCell>
                                     <TableCell><div className={styles.standingsCell}>Pts</div></TableCell>
                                     <TableCell></TableCell>
                                 </TableRow>
                             </TableHead>
-                            {/* <TableBody> */}
                                 {
                                     this.state.standings.map((groups) => {
                                         return( 
@@ -103,9 +102,9 @@ class Standings extends React.Component {
                                                             </TableCell>
                                                             <TableCell><div className={styles.standingsCell}>{team.teamName}</div></TableCell>
                                                             <TableCell><div className={styles.standingsCell}>{team.all.matchsPlayed}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCell}>{team.all.win}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCell}>{team.all.draw}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCell}>{team.all.lose}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCellToHide}>{team.all.win}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCellToHide}>{team.all.draw}</div></TableCell>
+                                                            <TableCell><div className={styles.standingsCellToHide}>{team.all.lose}</div></TableCell>
                                                             <TableCell><div className={styles.standingsCell}>{team.all.goalsFor} : {team.all.goalsAgainst}</div></TableCell>
                                                             <TableCell><div className={styles.standingsCell}>{team.points}</div></TableCell>
                                                             <TableCell>
@@ -126,7 +125,6 @@ class Standings extends React.Component {
 
                                     })
                                 }
-                            {/* </TableBody> */}
                         </Table>
                     </Paper>
                 }
