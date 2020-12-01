@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "95f3a59482bc5ae62da0796db8e0ca9d",
+    "revision": "ab9e8b227bbbefd289efdb996c48e445",
     "url": "/livescore-app/index.html"
   },
   {
-    "revision": "e7681bbdae3d38794b32",
-    "url": "/livescore-app/static/css/main.ddb98d8b.chunk.css"
+    "revision": "1942827cc3be75921fcd",
+    "url": "/livescore-app/static/css/main.b76e5fcb.chunk.css"
   },
   {
     "revision": "46eddd5920b6419fecb7",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/livescore-app/static/js/2.b5ca4d79.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e7681bbdae3d38794b32",
-    "url": "/livescore-app/static/js/main.57caa6bd.chunk.js"
+    "revision": "1942827cc3be75921fcd",
+    "url": "/livescore-app/static/js/main.ea5b251f.chunk.js"
   },
   {
     "revision": "ddc05e361d1b0c50a99f",
