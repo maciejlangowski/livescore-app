@@ -139,7 +139,7 @@ class Schedule extends React.Component {
                                 </Button>
                         </div>
                         <div className = {styles.todayButton}>
-                            <Button variant='contained' onClick={this.goToToday}>Go to today</Button>
+                            <Button variant='contained' onClick={this.goToToday} size='small'>Go to today</Button>
                         </div>
                             {
                                 this.leagues.map((league) => {

@@ -94,9 +94,13 @@ const TeamCard = ({team, logo, id, onDelete, team_id}) => {
                 return (
                   <div className={styles.lastFive}>
                       <div className={styles.eventDate}>{game.event_date.slice(5,10)}</div>
-                      <img src = {game.homeTeam.logo} alt = {game.homeTeam.team_name} className = {styles.teamLogo}/>
+                      <div className={styles.logoFavTeam}>
+                        <img src = {game.homeTeam.logo} alt = {game.homeTeam.team_name} className = {styles.teamLogoFav}/>
+                      </div>
                       vs.
-                      <img src = {game.awayTeam.logo} alt = {game.awayTeam.team_name} className = {styles.teamLogo}/>
+                      <div className={styles.logoFavTeam}>
+                        <img src = {game.awayTeam.logo} alt = {game.awayTeam.team_name} className = {styles.teamLogoFav}/>
+                      </div>
                       {game.goalsHomeTeam}:{game.goalsAwayTeam}
                   </div>
                 )

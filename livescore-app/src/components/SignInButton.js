@@ -39,7 +39,7 @@ class SignInButton extends React.Component {
                 
                 {
                     this.state.user
-                        ? <Button color='default' variant='contained' onClick={this.handleOnSignOut} >Sign Out</Button>
+                        ? <Button color='default' variant='contained' onClick={this.handleOnSignOut}>Sign Out</Button>
                         : <Button color='default' variant='contained' component={NavLink} to='/signin'>Sign In</Button>
                 }
 

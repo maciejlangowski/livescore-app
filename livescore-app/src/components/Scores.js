@@ -138,7 +138,7 @@ class Scores extends React.Component {
                             }
                         </div>
                         <div className = {styles.todayButton}>
-                            <Button variant='contained' onClick={this.goToToday}>Go to today</Button>
+                            <Button variant='contained' size='small' onClick={this.goToToday}>Go to today</Button>
                         </div>
                             {
                                 this.leagues.map((league) => {
