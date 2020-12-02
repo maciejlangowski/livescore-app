@@ -16,30 +16,30 @@ class Livescores extends React.Component {
     }
 
     fetchData = () => {
-        fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/live", { //wszystkie mecze, które są na żywo
-	        "method": "GET",
-	        "headers": {
-                "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
-                "x-rapidapi-key": "9dc5870a2bmsh0321b9ac9194ae8p194d54jsn157016b7cf80"
-	        }
-        })
-            .then(response => response.json())
-            .then(data => {
-                const formattedData = Object.keys(data)
-                    .map(key => {
-                        return {
-                            id: key,
-                            ...data[key]
-                        }
-                    })
+    //     fetch("https://api-football-v1.p.rapidapi.com/v2/fixtures/live", { //wszystkie mecze, które są na żywo
+	//         "method": "GET",
+	//         "headers": {
+    //             "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
+    //             "x-rapidapi-key": "9dc5870a2bmsh0321b9ac9194ae8p194d54jsn157016b7cf80"
+	//         }
+    //     })
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             const formattedData = Object.keys(data)
+    //                 .map(key => {
+    //                     return {
+    //                         id: key,
+    //                         ...data[key]
+    //                     }
+    //                 })
                 
-                const gameData = formattedData[0].fixtures
+    //             const gameData = formattedData[0].fixtures
 
                 this.setState({
-                    games: gameData,
+                    // games: gameData,
                     isLoading: false
                 })  
-        })
+        // })
     }
 
     componentDidMount() {

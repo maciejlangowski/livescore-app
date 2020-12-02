@@ -13,29 +13,29 @@ const entries = [
     {
         name: 'Home',
         icon: HomeIcon,
-        url: "/"
+        url: "/livescore-app/"
     },
     {
         name: 'Livescores',
         icon: LiveTvIcon,
-        url: "/livescores"
+        url: "/livescore-app/livescores"
     },
     {
         name: 'Scores',
         icon: SportsSoccerIcon,
-        url: "/scores"
+        url: "/livescore-app/scores"
     },
 
     {
         name: 'Schedule',
         icon: DateRangeIcon,
-        url: "/schedule"
+        url: "/livescore-app/schedule"
     },
 
     {
         name: 'My Teams',
         icon: FavoriteBorderOutlinedIcon,
-        url: "/myteams"
+        url: "/livescore-app/myteams"
     }
 ]
 

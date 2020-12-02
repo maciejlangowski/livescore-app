@@ -22,8 +22,8 @@ class Standings extends React.Component {
     }
 
     fetchData = () => {
-        const id = leagueID;
-        fetch(`https://rapidapi.p.rapidapi.com/v2/leagueTable/${id}`, { 
+        const id = leagueID
+        fetch(`https://rapidapi.p.rapidapi.com/v2/leagueTable/${leagueID}`, { 
 	        "method": "GET",
 	        "headers": {
                 "x-rapidapi-host": "api-football-v1.p.rapidapi.com",
@@ -41,7 +41,6 @@ class Standings extends React.Component {
                     })
 
                 const standingsData = formattedData[0].standings
-                // console.log(standingsData)
 
                 this.setState({
                     standings: standingsData,
@@ -55,7 +54,7 @@ class Standings extends React.Component {
     }
 
     handleOnClick = () => {
-        window.location.href = "/livescores"
+        window.location.href = "/livescore-app/livescores"
     }
 
     render() {
@@ -67,66 +66,65 @@ class Standings extends React.Component {
                 {
                     this.state.isLoading
                     ? <PageWrapper><CircularProgress size='150px' /> </PageWrapper>
-                    : <Paper elevation={10} className={styles.paperStandings}>
-                        <div className = {styles.standingsTableTop}>
-                            <Button onClick = {this.handleOnClick} variant='contained'>
-                                <ArrowBackIcon fontSize='large'/>
-                            </Button>
-                            <div className = {styles.standingsLeagueName}>{this.state.standings[0][0].group}</div>
-                        </div>
-                        <Table padding='checkbox' size='small'>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell><div className={styles.standingsCell}>#</div></TableCell>
-                                    <TableCell></TableCell>
-                                    <TableCell></TableCell>
-                                    <TableCell><div className={styles.standingsCell}>GP</div></TableCell>
-                                    <TableCell><div className={styles.standingsCellToHide}>W</div></TableCell>
-                                    <TableCell><div className={styles.standingsCellToHide}>D</div></TableCell>
-                                    <TableCell><div className={styles.standingsCellToHide}>L</div></TableCell>
-                                    <TableCell><div className={styles.standingsCell}>Goals</div></TableCell>
-                                    <TableCell><div className={styles.standingsCell}>Pts</div></TableCell>
-                                    <TableCell></TableCell>
-                                </TableRow>
-                            </TableHead>
-                                {
-                                    this.state.standings.map((groups) => {
-                                        return( 
-                                            groups.map((team) => {
-                                                return(
-                                                    <TableBody>
-                                                        <TableRow>
-                                                            <TableCell>{team.rank}</TableCell>
-                                                            <TableCell>
-                                                                <img src = {team.logo} alt = {team.teamName} className = {styles.teamLogo}/>
-                                                            </TableCell>
-                                                            <TableCell><div className={styles.standingsCell}>{team.teamName}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCell}>{team.all.matchsPlayed}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCellToHide}>{team.all.win}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCellToHide}>{team.all.draw}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCellToHide}>{team.all.lose}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCell}>{team.all.goalsFor} : {team.all.goalsAgainst}</div></TableCell>
-                                                            <TableCell><div className={styles.standingsCell}>{team.points}</div></TableCell>
-                                                            <TableCell>
-                                                                <AuthIcons>
-                                                                    <HeartIcon 
-                                                                        team = {team.teamName}
-                                                                        logo = {team.logo}
-                                                                        id = {team.team_id}
-                                                                    />
-                                                                </AuthIcons>
-                                                            </TableCell>
-                                                        </TableRow>
-                                                    </TableBody>
-                                                    
-                                                )
-                                            })
-                                        )
+                    :             <Paper elevation={10} className={styles.paperStandings}>
+                    <div className = {styles.standingsTableTop}>
+                        <Button onClick = {this.handleOnClick} variant='contained'>
+                            <ArrowBackIcon fontSize='large'/>
+                        </Button>
 
-                                    })
-                                }
+                        <div className = {styles.standingsLeagueName}>{this.state.standings[0][0].group}</div>
+                    </div>
+                    <Table padding='checkbox' size='small'>
+                        <TableHead>
+                            <TableRow>
+                                <TableCell><div className={styles.standingsCell}>#</div></TableCell>
+                                <TableCell></TableCell>
+                                <TableCell></TableCell>
+                                <TableCell><div className={styles.standingsCell}>GP</div></TableCell>
+                                <TableCell><div className={styles.standingsCellToHide}>W</div></TableCell>
+                                <TableCell><div className={styles.standingsCellToHide}>D</div></TableCell>
+                                <TableCell><div className={styles.standingsCellToHide}>L</div></TableCell>
+                                <TableCell><div className={styles.standingsCell}>Goals</div></TableCell>
+                                <TableCell><div className={styles.standingsCell}>Pts</div></TableCell>
+                                <TableCell></TableCell>
+                            </TableRow>
+                        </TableHead>
+                            {
+                                this.state.standings.map((groups) => {
+                                    return( 
+                                        groups.map((team) => {
+                                            return(
+                                                <TableBody>
+                                                    <TableRow>
+                                                        <TableCell>{team.rank}</TableCell>
+                                                        <TableCell>
+                                                            <img src = {team.logo} alt = {team.teamName} className = {styles.teamLogo}/>
+                                                        </TableCell>
+                                                        <TableCell><div className={styles.standingsCell}>{team.teamName}</div></TableCell>
+                                                        <TableCell><div className={styles.standingsCell}>{team.all.matchsPlayed}</div></TableCell>
+                                                        <TableCell><div className={styles.standingsCellToHide}>{team.all.win}</div></TableCell>
+                                                        <TableCell><div className={styles.standingsCellToHide}>{team.all.draw}</div></TableCell>
+                                                        <TableCell><div className={styles.standingsCellToHide}>{team.all.lose}</div></TableCell>
+                                                        <TableCell><div className={styles.standingsCell}>{team.all.goalsFor} : {team.all.goalsAgainst}</div></TableCell>
+                                                        <TableCell><div className={styles.standingsCell}>{team.points}</div></TableCell>
+                                                        <TableCell>
+                                                            <AuthIcons>
+                                                                <HeartIcon 
+                                                                    team = {team.teamName}
+                                                                    logo = {team.logo}
+                                                                    id = {team.team_id}
+                                                                />
+                                                            </AuthIcons>
+                                                        </TableCell>
+                                                    </TableRow>
+                                                </TableBody>   
+                                            )
+                                        })
+                                    )
+                                })
+                            }
                         </Table>
-                    </Paper>
+                </Paper>
                 }
             </div>
         )
