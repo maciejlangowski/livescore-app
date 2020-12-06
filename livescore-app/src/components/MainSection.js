@@ -165,7 +165,7 @@ export default function MainSection() {
         <main className={classes.content}>
           <div className={classes.toolbar} />
           <Switch>
-            {/* <Route exact path="/" component={Welcome} />
+            <Route exact path="/" component={Welcome} />
             <Route exact path="/livescores" component={Livescores} />
             <Route exact path="/scores" component={Scores} />
             <Route exact path="/schedule" component={Schedule} />
@@ -173,16 +173,7 @@ export default function MainSection() {
             <Route exact path="/standings/:id" component={Standings} />
             
             <Route path='/signin'  component={SignIn}/>
-            <Route path='/signup' component={() => <SignInEmail isSignUp />} />  */}
-            <Route exact path="/livescore-app/" component={Welcome} />
-            <Route exact path="/livescore-app/livescores" component={Livescores} />
-            <Route exact path="/livescore-app/scores" component={Scores} />
-            <Route exact path="/livescore-app/schedule" component={Schedule} />
-            <Route exact path="/livescore-app/myteams" component={MyTeams} />
-            <Route exact path="/livescore-app/standings/:id" component={Standings} />
-            
-            <Route path='/livescore-app/signin'  component={SignIn}/>
-            <Route path='/livescore-app/signup' component={() => <SignInEmail isSignUp />} /> 
+            <Route path='/signup' component={() => <SignInEmail isSignUp />} /> 
 
           </Switch>
         </main>

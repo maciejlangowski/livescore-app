@@ -217,7 +217,7 @@ h1 {
 /*Standings */
 
 .paperStandings {
-    width: 50%;
+    width: 40%;
     padding: 1rem;
     opacity: 0.9
 }
@@ -233,17 +233,27 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.standingsCell {
+.standingsRow {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 2.5fr repeat(4,1fr) 1fr 1fr 1fr;
+    height: 2rem;
+}
+
+.standingsCell, .standingsCellToHide, .standingsCellTeamName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.8rem;
     font-weight: 500;
 }
 
-.standingsCellToHide {
-    width: 20%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
+.standingsCellTeamName {
+    justify-content: flex-start;
+}
+
+.teamLogoStandings {
+    width: 25px;
 }
 
 /*Sign In */
@@ -311,7 +321,7 @@ h1 {
     }
 
     .paperStandings {
-        width: 65%
+        width: 60%
     }
 
     .favouriteTeamList {
@@ -328,7 +338,7 @@ h1 {
     }
 
     .paperStandings {
-        width: 75%
+        width: 65%
     }
 
     .favouriteTeamList {
@@ -347,14 +357,14 @@ h1 {
         width: 85%;
     }
 
+    .paperStandings {
+        width: 80%
+    }
+
     .hometeamName, .awayteamName {
         font-size: 0.85rem;
     }
     
-    .standingsCellToHide {
-        display: none
-    }
-
     .standingsLeagueName {
         font-size: 1.2rem;
     }
@@ -391,6 +401,22 @@ h1 {
 
     .gameRow, .scoreRow, .scheduleRow { 
         grid-template-columns: 0.5fr 6fr 4fr 6fr 0.5fr;
+    }
+
+    .paperStandings {
+        width: 85%
+    }
+
+    .standingsRow {
+        grid-template-columns: 0.5fr 1.5fr 3fr 1fr 2fr repeat(2,1fr);
+    }
+
+    .teamLogoStandings {
+        width: 20px;
+    }
+
+    .standingsCellToHide {
+        display: none;
     }
 
     .leagueName {
@@ -466,6 +492,22 @@ h1 {
 
     .teamLogo {
         width: 25px
+    }
+
+    .standingsCellTeamName {
+        display: none;
+    }
+
+    .standingsCell, .standingsCellToHide {
+        font-size: 0.7rem;
+    }
+
+    .standingsRow {
+        grid-template-columns: 1fr 2fr 1fr 2fr repeat(2,1fr);
+    }
+
+    .standingsLeagueName {
+        padding-top: 1rem
     }
 }
 

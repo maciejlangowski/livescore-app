@@ -22,7 +22,6 @@ class Standings extends React.Component {
     }
 
     fetchData = () => {
-        const id = leagueID
         fetch(`https://rapidapi.p.rapidapi.com/v2/leagueTable/${leagueID}`, { 
 	        "method": "GET",
 	        "headers": {
@@ -54,7 +53,7 @@ class Standings extends React.Component {
     }
 
     handleOnClick = () => {
-        window.location.href = "/livescore-app/livescores"
+        window.location.href = "/livescores"
     }
 
     render() {
@@ -66,64 +65,57 @@ class Standings extends React.Component {
                 {
                     this.state.isLoading
                     ? <PageWrapper><CircularProgress size='150px' /> </PageWrapper>
-                    :             <Paper elevation={10} className={styles.paperStandings}>
+                    : <Paper elevation={10} className={styles.paperStandings}>
                     <div className = {styles.standingsTableTop}>
                         <Button onClick = {this.handleOnClick} variant='contained'>
-                            <ArrowBackIcon fontSize='large'/>
+                            <ArrowBackIcon fontSize='small'/>
                         </Button>
 
                         <div className = {styles.standingsLeagueName}>{this.state.standings[0][0].group}</div>
                     </div>
-                    <Table padding='checkbox' size='small'>
-                        <TableHead>
-                            <TableRow>
-                                <TableCell><div className={styles.standingsCell}>#</div></TableCell>
-                                <TableCell></TableCell>
-                                <TableCell></TableCell>
-                                <TableCell><div className={styles.standingsCell}>GP</div></TableCell>
-                                <TableCell><div className={styles.standingsCellToHide}>W</div></TableCell>
-                                <TableCell><div className={styles.standingsCellToHide}>D</div></TableCell>
-                                <TableCell><div className={styles.standingsCellToHide}>L</div></TableCell>
-                                <TableCell><div className={styles.standingsCell}>Goals</div></TableCell>
-                                <TableCell><div className={styles.standingsCell}>Pts</div></TableCell>
-                                <TableCell></TableCell>
-                            </TableRow>
-                        </TableHead>
+                            <div className={styles.standingsRow}>
+                                <div className={styles.standingsCell}>#</div>
+                                <div className={styles.standingsCellTeamName}></div>
+                                <div className={styles.standingsCell}></div>
+                                <div className={styles.standingsCell}>GP</div>
+                                <div className={styles.standingsCellToHide}>W</div>
+                                <div className={styles.standingsCellToHide}>D</div>
+                                <div className={styles.standingsCellToHide}>L</div>
+                                <div className={styles.standingsCell}>Goals</div>
+                                <div className={styles.standingsCell}>Pts</div>
+                                <div className={styles.standingsCell}></div>
+
+                            </div>
                             {
                                 this.state.standings.map((groups) => {
                                     return( 
                                         groups.map((team) => {
                                             return(
-                                                <TableBody>
-                                                    <TableRow>
-                                                        <TableCell>{team.rank}</TableCell>
-                                                        <TableCell>
-                                                            <img src = {team.logo} alt = {team.teamName} className = {styles.teamLogo}/>
-                                                        </TableCell>
-                                                        <TableCell><div className={styles.standingsCell}>{team.teamName}</div></TableCell>
-                                                        <TableCell><div className={styles.standingsCell}>{team.all.matchsPlayed}</div></TableCell>
-                                                        <TableCell><div className={styles.standingsCellToHide}>{team.all.win}</div></TableCell>
-                                                        <TableCell><div className={styles.standingsCellToHide}>{team.all.draw}</div></TableCell>
-                                                        <TableCell><div className={styles.standingsCellToHide}>{team.all.lose}</div></TableCell>
-                                                        <TableCell><div className={styles.standingsCell}>{team.all.goalsFor} : {team.all.goalsAgainst}</div></TableCell>
-                                                        <TableCell><div className={styles.standingsCell}>{team.points}</div></TableCell>
-                                                        <TableCell>
-                                                            <AuthIcons>
-                                                                <HeartIcon 
-                                                                    team = {team.teamName}
-                                                                    logo = {team.logo}
-                                                                    id = {team.team_id}
-                                                                />
-                                                            </AuthIcons>
-                                                        </TableCell>
-                                                    </TableRow>
-                                                </TableBody>   
+                                                <div className={styles.standingsRow}>
+                                                    <div className={styles.standingsCell}>{team.rank}.</div>
+                                                    <div className={styles.standingsCell}>
+                                                        <img src = {team.logo} alt = {team.teamName} className = {styles.teamLogoStandings}/>  
+                                                    </div>
+                                                    <div className={styles.standingsCellTeamName}>{team.teamName}</div>
+                                                    <div className={styles.standingsCell}>{team.all.matchsPlayed}</div>
+                                                    <div className={styles.standingsCellToHide}>{team.all.win}</div>
+                                                    <div className={styles.standingsCellToHide}>{team.all.draw}</div>
+                                                    <div className={styles.standingsCellToHide}>{team.all.lose}</div>
+                                                    <div className={styles.standingsCell}>{team.all.goalsFor} : {team.all.goalsAgainst}</div>
+                                                    <div className={styles.standingsCell}>{team.points}</div>
+                                                    <AuthIcons>
+                                                        <HeartIcon 
+                                                            team = {team.teamName}
+                                                            logo = {team.logo}
+                                                            id = {team.team_id}
+                                                        />
+                                                    </AuthIcons>
+                                                </div>
                                             )
                                         })
                                     )
                                 })
                             }
-                        </Table>
                 </Paper>
                 }
             </div>
