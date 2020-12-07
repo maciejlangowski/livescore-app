@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import firebase from 'firebase';
-import Paper from '@material-ui/core/Paper';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import styles from './styles.module.css';
 

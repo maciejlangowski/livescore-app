@@ -408,7 +408,7 @@ h1 {
     }
 
     .standingsRow {
-        grid-template-columns: 0.5fr 1.5fr 3fr 1fr 2fr repeat(2,1fr);
+        grid-template-columns: 0.5fr 1.5fr 4fr 1fr 2fr repeat(2,1fr);
     }
 
     .teamLogoStandings {
@@ -417,6 +417,11 @@ h1 {
 
     .standingsCellToHide {
         display: none;
+    }
+
+    .standingsCell, .standingsCellTeamName{
+        font-size: 0.7rem;
+        font-weight: lighter;
     }
 
     .leagueName {
@@ -496,10 +501,6 @@ h1 {
 
     .standingsCellTeamName {
         display: none;
-    }
-
-    .standingsCell, .standingsCellToHide {
-        font-size: 0.7rem;
     }
 
     .standingsRow {
