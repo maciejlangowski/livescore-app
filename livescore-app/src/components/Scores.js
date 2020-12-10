@@ -55,9 +55,6 @@ class Scores extends React.Component {
                     isLoading: false
                 })
         })
-                    // this.setState({
-                    //     isLoading: false
-                    // })
     }
 
     componentDidMount() {
@@ -71,7 +68,7 @@ class Scores extends React.Component {
             isLoading: true
         })
         dateChanged.setDate(dateChanged.getDate() + this.state.day);
-        console.log(this.state.date)
+
         this.fetchData();
     }
 
@@ -82,7 +79,6 @@ class Scores extends React.Component {
             isLoading: true
         })
         dateChanged.setDate(dateChanged.getDate() + this.state.day)
-        console.log(this.state.date)
         this.fetchData();
     }
     
@@ -93,7 +89,6 @@ class Scores extends React.Component {
         })
         dateChanged = new Date()
         this.fetchData();
-        console.log(this.state.date)
     }
 
     leagues = [

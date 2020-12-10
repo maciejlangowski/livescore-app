@@ -1,6 +1,7 @@
 /* Całość projektu */
 :root{
     background-image: url('https://images.unsplash.com/photo-1544914379-806667cd9489?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
+    /* background-repeat: no-repeat; */
     background-size: cover;
     width: 100%;
 }
@@ -107,7 +108,6 @@ h1 {
 }
 
 .gameRow {
-    /* padding: 0.05rem 0; */
     display: grid;
     grid-template-columns: 1fr 4fr 1fr 2fr 1fr 4fr 1fr;
 }
@@ -147,7 +147,7 @@ h1 {
     align-items: center;
 }
 
-.awayteamName{
+.awayteamName {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -253,7 +253,7 @@ h1 {
 }
 
 .teamLogoStandings {
-    width: 25px;
+    width: 20px;
 }
 
 /*Sign In */
@@ -421,7 +421,7 @@ h1 {
 
     .standingsCell, .standingsCellTeamName{
         font-size: 0.7rem;
-        font-weight: lighter;
+        font-weight: normal;
     }
 
     .leagueName {

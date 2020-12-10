@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   cardTop: {
-    height: '50px'
+    height: '50px',
   },
 
   delIcon: {

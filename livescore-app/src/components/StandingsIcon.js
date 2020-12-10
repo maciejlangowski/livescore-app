@@ -12,11 +12,7 @@ class StandingsIcon extends React.Component {
     }
 
     handleOnClick = () => {
-        leagueID = this.props.leagueId
-
-        this.setState ({
-            id: leagueID
-        })
+        leagueID = this.state.id
     }
 
     render() {
